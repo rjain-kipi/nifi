@@ -1,0 +1,2826 @@
+{
+  "header" : {
+    "dataModelVersion" : "3"
+  },
+  "content" : {
+    "flowSnapshot" : {
+      "externalControllerServices" : { },
+      "flowContents" : {
+        "comments" : "",
+        "componentType" : "PROCESS_GROUP",
+        "connections" : [ {
+          "backPressureDataSizeThreshold" : "3 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "groupId" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+            "id" : "d20b5205-028b-34a6-b190-725c30de43c6",
+            "instanceIdentifier" : "d239e8f0-b3eb-380e-49ea-f9a5f35a635d",
+            "name" : "inputstream",
+            "type" : "INPUT_PORT"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "b87149a7-5bcb-3a2c-9ff5-eca1b275c140",
+          "identifier" : "9631c26d-0c49-333d-a111-a39e15b50adf",
+          "instanceIdentifier" : "db3fd3f0-8486-3d94-056d-3f89edcdc6b1",
+          "labelIndex" : 1,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "" ],
+          "source" : {
+            "groupId" : "5a8c1b67-038c-3881-8b54-28b710a0a121",
+            "id" : "cc417456-33a4-3bb2-aa4b-83e8e1edae70",
+            "instanceIdentifier" : "99648d3a-991d-35ab-c608-aa5e2156e323",
+            "name" : "CSVStream",
+            "type" : "OUTPUT_PORT"
+          },
+          "zIndex" : 0
+        } ],
+        "controllerServices" : [ {
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-dbcp-service-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.28.0"
+          },
+          "comments" : "",
+          "componentType" : "CONTROLLER_SERVICE",
+          "controllerServiceApis" : [ {
+            "bundle" : {
+              "artifact" : "nifi-standard-services-api-nar",
+              "group" : "org.apache.nifi",
+              "version" : "1.28.0"
+            },
+            "type" : "org.apache.nifi.dbcp.DBCPService"
+          } ],
+          "groupIdentifier" : "b87149a7-5bcb-3a2c-9ff5-eca1b275c140",
+          "identifier" : "9db8bf02-2ae1-3e55-a29e-9729d52a7b80",
+          "instanceIdentifier" : "626b2f6a-432e-391a-cd93-6feba2d9d072",
+          "name" : "EDW_DBCPConnectionPool",
+          "properties" : {
+            "dbcp-min-idle-conns" : "1",
+            "Max Wait Time" : "500 millis",
+            "Database Driver Class Name" : "oracle.jdbc.OracleDriver",
+            "dbcp-min-evictable-idle-time" : "30 mins",
+            "Max Total Connections" : "8",
+            "dbcp-max-conn-lifetime" : "-1",
+            "Validation-query" : "SELECT 1 FROM DUAL",
+            "Database Connection URL" : "jdbc:oracle:thin:@//at4ex02-scan1.corp.rndc-usa.com:1521/ddw_svc1",
+            "dbcp-time-between-eviction-runs" : "-1",
+            "Database User" : "NIFI",
+            "dbcp-soft-min-evictable-idle-time" : "-1",
+            "dbcp-max-idle-conns" : "8"
+          },
+          "propertyDescriptors" : {
+            "kerberos-password" : {
+              "displayName" : "Kerberos Password",
+              "identifiesControllerService" : false,
+              "name" : "kerberos-password",
+              "sensitive" : true
+            },
+            "dbcp-min-idle-conns" : {
+              "displayName" : "Minimum Idle Connections",
+              "identifiesControllerService" : false,
+              "name" : "dbcp-min-idle-conns",
+              "sensitive" : false
+            },
+            "Max Wait Time" : {
+              "displayName" : "Max Wait Time",
+              "identifiesControllerService" : false,
+              "name" : "Max Wait Time",
+              "sensitive" : false
+            },
+            "Database Driver Class Name" : {
+              "displayName" : "Database Driver Class Name",
+              "identifiesControllerService" : false,
+              "name" : "Database Driver Class Name",
+              "sensitive" : false
+            },
+            "dbcp-min-evictable-idle-time" : {
+              "displayName" : "Minimum Evictable Idle Time",
+              "identifiesControllerService" : false,
+              "name" : "dbcp-min-evictable-idle-time",
+              "sensitive" : false
+            },
+            "kerberos-principal" : {
+              "displayName" : "Kerberos Principal",
+              "identifiesControllerService" : false,
+              "name" : "kerberos-principal",
+              "sensitive" : false
+            },
+            "Max Total Connections" : {
+              "displayName" : "Max Total Connections",
+              "identifiesControllerService" : false,
+              "name" : "Max Total Connections",
+              "sensitive" : false
+            },
+            "kerberos-credentials-service" : {
+              "displayName" : "Kerberos Credentials Service",
+              "identifiesControllerService" : true,
+              "name" : "kerberos-credentials-service",
+              "sensitive" : false
+            },
+            "dbcp-max-conn-lifetime" : {
+              "displayName" : "Max Connection Lifetime",
+              "identifiesControllerService" : false,
+              "name" : "dbcp-max-conn-lifetime",
+              "sensitive" : false
+            },
+            "Validation-query" : {
+              "displayName" : "Validation query",
+              "identifiesControllerService" : false,
+              "name" : "Validation-query",
+              "sensitive" : false
+            },
+            "Database Connection URL" : {
+              "displayName" : "Database Connection URL",
+              "identifiesControllerService" : false,
+              "name" : "Database Connection URL",
+              "sensitive" : false
+            },
+            "dbcp-time-between-eviction-runs" : {
+              "displayName" : "Time Between Eviction Runs",
+              "identifiesControllerService" : false,
+              "name" : "dbcp-time-between-eviction-runs",
+              "sensitive" : false
+            },
+            "Database User" : {
+              "displayName" : "Database User",
+              "identifiesControllerService" : false,
+              "name" : "Database User",
+              "sensitive" : false
+            },
+            "kerberos-user-service" : {
+              "displayName" : "Kerberos User Service",
+              "identifiesControllerService" : true,
+              "name" : "kerberos-user-service",
+              "sensitive" : false
+            },
+            "dbcp-soft-min-evictable-idle-time" : {
+              "displayName" : "Soft Minimum Evictable Idle Time",
+              "identifiesControllerService" : false,
+              "name" : "dbcp-soft-min-evictable-idle-time",
+              "sensitive" : false
+            },
+            "database-driver-locations" : {
+              "displayName" : "Database Driver Location(s)",
+              "identifiesControllerService" : false,
+              "name" : "database-driver-locations",
+              "resourceDefinition" : {
+                "cardinality" : "MULTIPLE",
+                "resourceTypes" : [ "FILE", "URL", "DIRECTORY" ]
+              },
+              "sensitive" : false
+            },
+            "dbcp-max-idle-conns" : {
+              "displayName" : "Max Idle Connections",
+              "identifiesControllerService" : false,
+              "name" : "dbcp-max-idle-conns",
+              "sensitive" : false
+            },
+            "Password" : {
+              "displayName" : "Password",
+              "identifiesControllerService" : false,
+              "name" : "Password",
+              "sensitive" : true
+            }
+          },
+          "scheduledState" : "DISABLED",
+          "type" : "org.apache.nifi.dbcp.DBCPConnectionPool"
+        }, {
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-dbcp-service-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.28.0"
+          },
+          "comments" : "",
+          "componentType" : "CONTROLLER_SERVICE",
+          "controllerServiceApis" : [ {
+            "bundle" : {
+              "artifact" : "nifi-standard-services-api-nar",
+              "group" : "org.apache.nifi",
+              "version" : "1.28.0"
+            },
+            "type" : "org.apache.nifi.dbcp.DBCPService"
+          } ],
+          "groupIdentifier" : "b87149a7-5bcb-3a2c-9ff5-eca1b275c140",
+          "identifier" : "3de863a4-81df-3ce8-a69c-53eb107932dc",
+          "instanceIdentifier" : "d0174902-39a3-3ea0-b192-ecc43f0fcc75",
+          "name" : "PROD_EDW_DBCPConnectionPool",
+          "properties" : {
+            "dbcp-min-idle-conns" : "1",
+            "Max Wait Time" : "500 millis",
+            "Database Driver Class Name" : "oracle.jdbc.OracleDriver",
+            "dbcp-min-evictable-idle-time" : "30 mins",
+            "Max Total Connections" : "8",
+            "dbcp-max-conn-lifetime" : "-1",
+            "Validation-query" : "SELECT 1 FROM DUAL",
+            "Database Connection URL" : "jdbc:oracle:thin:@//at4ex01-scan1.corp.rndc-usa.com:1521/pdw_websvc1",
+            "dbcp-time-between-eviction-runs" : "-1",
+            "Database User" : "DE_INGESTION_RO",
+            "dbcp-soft-min-evictable-idle-time" : "-1",
+            "dbcp-max-idle-conns" : "8"
+          },
+          "propertyDescriptors" : {
+            "kerberos-password" : {
+              "displayName" : "Kerberos Password",
+              "identifiesControllerService" : false,
+              "name" : "kerberos-password",
+              "sensitive" : true
+            },
+            "dbcp-min-idle-conns" : {
+              "displayName" : "Minimum Idle Connections",
+              "identifiesControllerService" : false,
+              "name" : "dbcp-min-idle-conns",
+              "sensitive" : false
+            },
+            "Max Wait Time" : {
+              "displayName" : "Max Wait Time",
+              "identifiesControllerService" : false,
+              "name" : "Max Wait Time",
+              "sensitive" : false
+            },
+            "Database Driver Class Name" : {
+              "displayName" : "Database Driver Class Name",
+              "identifiesControllerService" : false,
+              "name" : "Database Driver Class Name",
+              "sensitive" : false
+            },
+            "dbcp-min-evictable-idle-time" : {
+              "displayName" : "Minimum Evictable Idle Time",
+              "identifiesControllerService" : false,
+              "name" : "dbcp-min-evictable-idle-time",
+              "sensitive" : false
+            },
+            "kerberos-principal" : {
+              "displayName" : "Kerberos Principal",
+              "identifiesControllerService" : false,
+              "name" : "kerberos-principal",
+              "sensitive" : false
+            },
+            "Max Total Connections" : {
+              "displayName" : "Max Total Connections",
+              "identifiesControllerService" : false,
+              "name" : "Max Total Connections",
+              "sensitive" : false
+            },
+            "kerberos-credentials-service" : {
+              "displayName" : "Kerberos Credentials Service",
+              "identifiesControllerService" : true,
+              "name" : "kerberos-credentials-service",
+              "sensitive" : false
+            },
+            "dbcp-max-conn-lifetime" : {
+              "displayName" : "Max Connection Lifetime",
+              "identifiesControllerService" : false,
+              "name" : "dbcp-max-conn-lifetime",
+              "sensitive" : false
+            },
+            "Validation-query" : {
+              "displayName" : "Validation query",
+              "identifiesControllerService" : false,
+              "name" : "Validation-query",
+              "sensitive" : false
+            },
+            "Database Connection URL" : {
+              "displayName" : "Database Connection URL",
+              "identifiesControllerService" : false,
+              "name" : "Database Connection URL",
+              "sensitive" : false
+            },
+            "dbcp-time-between-eviction-runs" : {
+              "displayName" : "Time Between Eviction Runs",
+              "identifiesControllerService" : false,
+              "name" : "dbcp-time-between-eviction-runs",
+              "sensitive" : false
+            },
+            "Database User" : {
+              "displayName" : "Database User",
+              "identifiesControllerService" : false,
+              "name" : "Database User",
+              "sensitive" : false
+            },
+            "kerberos-user-service" : {
+              "displayName" : "Kerberos User Service",
+              "identifiesControllerService" : true,
+              "name" : "kerberos-user-service",
+              "sensitive" : false
+            },
+            "dbcp-soft-min-evictable-idle-time" : {
+              "displayName" : "Soft Minimum Evictable Idle Time",
+              "identifiesControllerService" : false,
+              "name" : "dbcp-soft-min-evictable-idle-time",
+              "sensitive" : false
+            },
+            "database-driver-locations" : {
+              "displayName" : "Database Driver Location(s)",
+              "identifiesControllerService" : false,
+              "name" : "database-driver-locations",
+              "resourceDefinition" : {
+                "cardinality" : "MULTIPLE",
+                "resourceTypes" : [ "FILE", "URL", "DIRECTORY" ]
+              },
+              "sensitive" : false
+            },
+            "dbcp-max-idle-conns" : {
+              "displayName" : "Max Idle Connections",
+              "identifiesControllerService" : false,
+              "name" : "dbcp-max-idle-conns",
+              "sensitive" : false
+            },
+            "Password" : {
+              "displayName" : "Password",
+              "identifiesControllerService" : false,
+              "name" : "Password",
+              "sensitive" : true
+            }
+          },
+          "scheduledState" : "DISABLED",
+          "type" : "org.apache.nifi.dbcp.DBCPConnectionPool"
+        }, {
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-key-service-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.28.0"
+          },
+          "comments" : "",
+          "componentType" : "CONTROLLER_SERVICE",
+          "controllerServiceApis" : [ {
+            "bundle" : {
+              "artifact" : "nifi-standard-services-api-nar",
+              "group" : "org.apache.nifi",
+              "version" : "1.28.0"
+            },
+            "type" : "org.apache.nifi.key.service.api.PrivateKeyService"
+          } ],
+          "groupIdentifier" : "b87149a7-5bcb-3a2c-9ff5-eca1b275c140",
+          "identifier" : "f68dc7a2-3577-3cb3-bc6e-05c57d81b2ac",
+          "instanceIdentifier" : "9c8bf052-1bca-3c32-5891-e447e0ca12fb",
+          "name" : "StandardPrivateKeyService",
+          "properties" : { },
+          "propertyDescriptors" : {
+            "key-password" : {
+              "displayName" : "Key Password",
+              "identifiesControllerService" : false,
+              "name" : "key-password",
+              "sensitive" : true
+            },
+            "key-file" : {
+              "displayName" : "Key File",
+              "identifiesControllerService" : false,
+              "name" : "key-file",
+              "resourceDefinition" : {
+                "cardinality" : "SINGLE",
+                "resourceTypes" : [ "FILE" ]
+              },
+              "sensitive" : false
+            },
+            "key" : {
+              "displayName" : "Key",
+              "identifiesControllerService" : false,
+              "name" : "key",
+              "sensitive" : true
+            }
+          },
+          "scheduledState" : "DISABLED",
+          "type" : "org.apache.nifi.key.service.StandardPrivateKeyService"
+        }, {
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-snowflake-services-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.28.0"
+          },
+          "comments" : "",
+          "componentType" : "CONTROLLER_SERVICE",
+          "controllerServiceApis" : [ {
+            "bundle" : {
+              "artifact" : "nifi-snowflake-services-api-nar",
+              "group" : "org.apache.nifi",
+              "version" : "1.28.0"
+            },
+            "type" : "org.apache.nifi.processors.snowflake.SnowflakeConnectionProviderService"
+          }, {
+            "bundle" : {
+              "artifact" : "nifi-standard-services-api-nar",
+              "group" : "org.apache.nifi",
+              "version" : "1.28.0"
+            },
+            "type" : "org.apache.nifi.dbcp.DBCPService"
+          } ],
+          "groupIdentifier" : "b87149a7-5bcb-3a2c-9ff5-eca1b275c140",
+          "identifier" : "84daa789-79ae-3571-82b5-69fd1aee15cd",
+          "instanceIdentifier" : "a21c42b2-3f6e-304b-99d3-128f74183081",
+          "name" : "SnowflakeComputingConnectionPool",
+          "properties" : {
+            "schema" : "DE_SANDBOX",
+            "dbcp-min-idle-conns" : "0",
+            "Max Wait Time" : "500 millis",
+            "connection-url-format" : "full-url",
+            "dbcp-min-evictable-idle-time" : "30 mins",
+            "warehouse" : "WH_DATA_INGESTION_NON_PROD",
+            "Max Total Connections" : "24",
+            "database" : "DB_SANDBOX",
+            "dbcp-max-conn-lifetime" : "-1",
+            "Database Connection URL" : "jdbc:snowflake://gkb20466.us-east-1.snowflakecomputing.com",
+            "dbcp-time-between-eviction-runs" : "-1",
+            "Database User" : "SVC-ACCOUNT-NIFI-DEV",
+            "dbcp-soft-min-evictable-idle-time" : "-1",
+            "dbcp-max-idle-conns" : "8"
+          },
+          "propertyDescriptors" : {
+            "schema" : {
+              "displayName" : "Schema",
+              "identifiesControllerService" : false,
+              "name" : "schema",
+              "sensitive" : false
+            },
+            "account-name" : {
+              "displayName" : "Account Name",
+              "identifiesControllerService" : false,
+              "name" : "account-name",
+              "sensitive" : false
+            },
+            "cloud-type" : {
+              "displayName" : "Cloud Type",
+              "identifiesControllerService" : false,
+              "name" : "cloud-type",
+              "sensitive" : false
+            },
+            "dbcp-min-idle-conns" : {
+              "displayName" : "Minimum Idle Connections",
+              "identifiesControllerService" : false,
+              "name" : "dbcp-min-idle-conns",
+              "sensitive" : false
+            },
+            "Max Wait Time" : {
+              "displayName" : "Max Wait Time",
+              "identifiesControllerService" : false,
+              "name" : "Max Wait Time",
+              "sensitive" : false
+            },
+            "connection-url-format" : {
+              "displayName" : "Connection URL Format",
+              "identifiesControllerService" : false,
+              "name" : "connection-url-format",
+              "sensitive" : false
+            },
+            "account-locator" : {
+              "displayName" : "Account Locator",
+              "identifiesControllerService" : false,
+              "name" : "account-locator",
+              "sensitive" : false
+            },
+            "proxy-configuration-service" : {
+              "displayName" : "Proxy Configuration Service",
+              "identifiesControllerService" : true,
+              "name" : "proxy-configuration-service",
+              "sensitive" : false
+            },
+            "dbcp-min-evictable-idle-time" : {
+              "displayName" : "Minimum Evictable Idle Time",
+              "identifiesControllerService" : false,
+              "name" : "dbcp-min-evictable-idle-time",
+              "sensitive" : false
+            },
+            "warehouse" : {
+              "displayName" : "Warehouse",
+              "identifiesControllerService" : false,
+              "name" : "warehouse",
+              "sensitive" : false
+            },
+            "Max Total Connections" : {
+              "displayName" : "Max Total Connections",
+              "identifiesControllerService" : false,
+              "name" : "Max Total Connections",
+              "sensitive" : false
+            },
+            "cloud-region" : {
+              "displayName" : "Cloud Region",
+              "identifiesControllerService" : false,
+              "name" : "cloud-region",
+              "sensitive" : false
+            },
+            "database" : {
+              "displayName" : "Database",
+              "identifiesControllerService" : false,
+              "name" : "database",
+              "sensitive" : false
+            },
+            "dbcp-max-conn-lifetime" : {
+              "displayName" : "Max Connection Lifetime",
+              "identifiesControllerService" : false,
+              "name" : "dbcp-max-conn-lifetime",
+              "sensitive" : false
+            },
+            "Validation-query" : {
+              "displayName" : "Validation query",
+              "identifiesControllerService" : false,
+              "name" : "Validation-query",
+              "sensitive" : false
+            },
+            "Database Connection URL" : {
+              "displayName" : "Snowflake URL",
+              "identifiesControllerService" : false,
+              "name" : "Database Connection URL",
+              "sensitive" : false
+            },
+            "dbcp-time-between-eviction-runs" : {
+              "displayName" : "Time Between Eviction Runs",
+              "identifiesControllerService" : false,
+              "name" : "dbcp-time-between-eviction-runs",
+              "sensitive" : false
+            },
+            "Database User" : {
+              "displayName" : "Username",
+              "identifiesControllerService" : false,
+              "name" : "Database User",
+              "sensitive" : false
+            },
+            "dbcp-soft-min-evictable-idle-time" : {
+              "displayName" : "Soft Minimum Evictable Idle Time",
+              "identifiesControllerService" : false,
+              "name" : "dbcp-soft-min-evictable-idle-time",
+              "sensitive" : false
+            },
+            "organization-name" : {
+              "displayName" : "Organization Name",
+              "identifiesControllerService" : false,
+              "name" : "organization-name",
+              "sensitive" : false
+            },
+            "dbcp-max-idle-conns" : {
+              "displayName" : "Max Idle Connections",
+              "identifiesControllerService" : false,
+              "name" : "dbcp-max-idle-conns",
+              "sensitive" : false
+            },
+            "Password" : {
+              "displayName" : "Password",
+              "identifiesControllerService" : false,
+              "name" : "Password",
+              "sensitive" : true
+            }
+          },
+          "scheduledState" : "DISABLED",
+          "type" : "org.apache.nifi.snowflake.service.SnowflakeComputingConnectionPool"
+        } ],
+        "defaultBackPressureDataSizeThreshold" : "1 GB",
+        "defaultBackPressureObjectThreshold" : 10000,
+        "defaultFlowFileExpiration" : "0 sec",
+        "flowFileConcurrency" : "UNBOUNDED",
+        "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
+        "funnels" : [ ],
+        "identifier" : "b87149a7-5bcb-3a2c-9ff5-eca1b275c140",
+        "inputPorts" : [ ],
+        "instanceIdentifier" : "847e28a5-0195-1000-8198-c8cd83e02d98",
+        "labels" : [ {
+          "componentType" : "LABEL",
+          "groupIdentifier" : "b87149a7-5bcb-3a2c-9ff5-eca1b275c140",
+          "height" : 480.0,
+          "identifier" : "3c9f9c2b-14de-3611-8a80-76f6cba4ac40",
+          "instanceIdentifier" : "bcdec122-07e6-3209-a26d-e063c830c310",
+          "label" : "PIPELINE - CM_LKP_REPORT_MARKET",
+          "position" : {
+            "x" : 6050.0,
+            "y" : 2594.0
+          },
+          "style" : {
+            "font-size" : "22px"
+          },
+          "width" : 1064.0,
+          "zIndex" : 0
+        } ],
+        "logFileSuffix" : "",
+        "name" : "CM_LKP_REPORT_MARKET",
+        "outputPorts" : [ ],
+        "parameterContextName" : "CM_LKP_REPORT_MARKET",
+        "position" : {
+          "x" : 444.0,
+          "y" : 69.0
+        },
+        "processGroups" : [ {
+          "comments" : "",
+          "componentType" : "PROCESS_GROUP",
+          "connections" : [ {
+            "backPressureDataSizeThreshold" : "3 GB",
+            "backPressureObjectThreshold" : 10000,
+            "bends" : [ ],
+            "componentType" : "CONNECTION",
+            "destination" : {
+              "comments" : "",
+              "groupId" : "601b1860-275b-39cf-91c2-d29368f31785",
+              "id" : "85d894a2-7487-3a3a-8a04-5c98501a4714",
+              "instanceIdentifier" : "08253004-343f-363b-9eac-246338e65b07",
+              "name" : "LogAttribute",
+              "type" : "PROCESSOR"
+            },
+            "flowFileExpiration" : "0 sec",
+            "groupIdentifier" : "601b1860-275b-39cf-91c2-d29368f31785",
+            "identifier" : "59cd2552-8f76-3c78-902e-39f55b4d4f9b",
+            "instanceIdentifier" : "c27946db-c503-3cb7-00bb-fba2d15e432f",
+            "labelIndex" : 1,
+            "loadBalanceCompression" : "DO_NOT_COMPRESS",
+            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+            "name" : "",
+            "partitioningAttribute" : "",
+            "prioritizers" : [ ],
+            "selectedRelationships" : [ "success", "failure", "retry" ],
+            "source" : {
+              "comments" : "",
+              "groupId" : "601b1860-275b-39cf-91c2-d29368f31785",
+              "id" : "c5da811c-5001-32db-99f1-cd4e5a5475d5",
+              "instanceIdentifier" : "7788eb97-2475-3613-3eb2-5f794dd548ef",
+              "name" : "PutSQL",
+              "type" : "PROCESSOR"
+            },
+            "zIndex" : 0
+          }, {
+            "backPressureDataSizeThreshold" : "3 GB",
+            "backPressureObjectThreshold" : 10000,
+            "bends" : [ ],
+            "componentType" : "CONNECTION",
+            "destination" : {
+              "comments" : "",
+              "groupId" : "601b1860-275b-39cf-91c2-d29368f31785",
+              "id" : "85d894a2-7487-3a3a-8a04-5c98501a4714",
+              "instanceIdentifier" : "08253004-343f-363b-9eac-246338e65b07",
+              "name" : "LogAttribute",
+              "type" : "PROCESSOR"
+            },
+            "flowFileExpiration" : "0 sec",
+            "groupIdentifier" : "601b1860-275b-39cf-91c2-d29368f31785",
+            "identifier" : "36e79e35-958b-330f-acda-2a6e3b110aa2",
+            "instanceIdentifier" : "0d722743-7729-3842-23a8-e1c7c003ed3d",
+            "labelIndex" : 1,
+            "loadBalanceCompression" : "DO_NOT_COMPRESS",
+            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+            "name" : "",
+            "partitioningAttribute" : "",
+            "prioritizers" : [ ],
+            "selectedRelationships" : [ "success", "failure", "retry" ],
+            "source" : {
+              "comments" : "",
+              "groupId" : "601b1860-275b-39cf-91c2-d29368f31785",
+              "id" : "5510500d-a1c3-339d-968c-8c5812907b68",
+              "instanceIdentifier" : "b5594539-a545-3078-87ff-8d30608f3d6a",
+              "name" : "PutSQL",
+              "type" : "PROCESSOR"
+            },
+            "zIndex" : 0
+          }, {
+            "backPressureDataSizeThreshold" : "3 GB",
+            "backPressureObjectThreshold" : 10000,
+            "bends" : [ ],
+            "componentType" : "CONNECTION",
+            "destination" : {
+              "comments" : "",
+              "groupId" : "601b1860-275b-39cf-91c2-d29368f31785",
+              "id" : "5510500d-a1c3-339d-968c-8c5812907b68",
+              "instanceIdentifier" : "b5594539-a545-3078-87ff-8d30608f3d6a",
+              "name" : "PutSQL",
+              "type" : "PROCESSOR"
+            },
+            "flowFileExpiration" : "0 sec",
+            "groupIdentifier" : "601b1860-275b-39cf-91c2-d29368f31785",
+            "identifier" : "a3623349-9285-3e1d-a1de-c7415a5ab4b5",
+            "instanceIdentifier" : "44ee6517-cd22-37a2-a27e-43c6d50768be",
+            "labelIndex" : 1,
+            "loadBalanceCompression" : "DO_NOT_COMPRESS",
+            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+            "name" : "",
+            "partitioningAttribute" : "",
+            "prioritizers" : [ ],
+            "selectedRelationships" : [ "success" ],
+            "source" : {
+              "comments" : "",
+              "groupId" : "601b1860-275b-39cf-91c2-d29368f31785",
+              "id" : "c5da811c-5001-32db-99f1-cd4e5a5475d5",
+              "instanceIdentifier" : "7788eb97-2475-3613-3eb2-5f794dd548ef",
+              "name" : "PutSQL",
+              "type" : "PROCESSOR"
+            },
+            "zIndex" : 0
+          }, {
+            "backPressureDataSizeThreshold" : "3 GB",
+            "backPressureObjectThreshold" : 10000,
+            "bends" : [ ],
+            "componentType" : "CONNECTION",
+            "destination" : {
+              "comments" : "",
+              "groupId" : "601b1860-275b-39cf-91c2-d29368f31785",
+              "id" : "c5da811c-5001-32db-99f1-cd4e5a5475d5",
+              "instanceIdentifier" : "7788eb97-2475-3613-3eb2-5f794dd548ef",
+              "name" : "PutSQL",
+              "type" : "PROCESSOR"
+            },
+            "flowFileExpiration" : "0 sec",
+            "groupIdentifier" : "601b1860-275b-39cf-91c2-d29368f31785",
+            "identifier" : "d0415d0e-5b9f-306b-a6f7-a7b79c55405f",
+            "instanceIdentifier" : "d400fc61-d616-38f1-0dd6-ce6f657f9a7c",
+            "labelIndex" : 1,
+            "loadBalanceCompression" : "DO_NOT_COMPRESS",
+            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+            "name" : "",
+            "partitioningAttribute" : "",
+            "prioritizers" : [ ],
+            "selectedRelationships" : [ "success" ],
+            "source" : {
+              "comments" : "",
+              "groupId" : "601b1860-275b-39cf-91c2-d29368f31785",
+              "id" : "0d9ba3c5-410d-38ab-8338-84c7aaac7069",
+              "instanceIdentifier" : "513f82c2-50a4-38a9-58e1-ccdeab8840bb",
+              "name" : "PutSQL",
+              "type" : "PROCESSOR"
+            },
+            "zIndex" : 0
+          }, {
+            "backPressureDataSizeThreshold" : "3 GB",
+            "backPressureObjectThreshold" : 10000,
+            "bends" : [ ],
+            "componentType" : "CONNECTION",
+            "destination" : {
+              "comments" : "",
+              "groupId" : "601b1860-275b-39cf-91c2-d29368f31785",
+              "id" : "0d9ba3c5-410d-38ab-8338-84c7aaac7069",
+              "instanceIdentifier" : "513f82c2-50a4-38a9-58e1-ccdeab8840bb",
+              "name" : "PutSQL",
+              "type" : "PROCESSOR"
+            },
+            "flowFileExpiration" : "0 sec",
+            "groupIdentifier" : "601b1860-275b-39cf-91c2-d29368f31785",
+            "identifier" : "85f9fbb8-9fab-35d5-abc0-3a27fcef24c4",
+            "instanceIdentifier" : "d5738039-d276-3208-b4c5-4ddc7fd07f71",
+            "labelIndex" : 1,
+            "loadBalanceCompression" : "DO_NOT_COMPRESS",
+            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+            "name" : "",
+            "partitioningAttribute" : "",
+            "prioritizers" : [ ],
+            "selectedRelationships" : [ "success" ],
+            "source" : {
+              "comments" : "",
+              "groupId" : "601b1860-275b-39cf-91c2-d29368f31785",
+              "id" : "56d6e7be-2635-3d41-a8f5-8c989ffb77b3",
+              "instanceIdentifier" : "d45d9005-159a-3245-7839-2ba87ec0b122",
+              "name" : "GenerateFlowFile",
+              "type" : "PROCESSOR"
+            },
+            "zIndex" : 0
+          }, {
+            "backPressureDataSizeThreshold" : "3 GB",
+            "backPressureObjectThreshold" : 10000,
+            "bends" : [ ],
+            "componentType" : "CONNECTION",
+            "destination" : {
+              "comments" : "",
+              "groupId" : "601b1860-275b-39cf-91c2-d29368f31785",
+              "id" : "85d894a2-7487-3a3a-8a04-5c98501a4714",
+              "instanceIdentifier" : "08253004-343f-363b-9eac-246338e65b07",
+              "name" : "LogAttribute",
+              "type" : "PROCESSOR"
+            },
+            "flowFileExpiration" : "0 sec",
+            "groupIdentifier" : "601b1860-275b-39cf-91c2-d29368f31785",
+            "identifier" : "061ecb41-32a5-3e8c-931d-4bf5604dbc89",
+            "instanceIdentifier" : "1126334d-8f73-3cc9-61bc-322ab0e1df77",
+            "labelIndex" : 1,
+            "loadBalanceCompression" : "DO_NOT_COMPRESS",
+            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+            "name" : "",
+            "partitioningAttribute" : "",
+            "prioritizers" : [ ],
+            "selectedRelationships" : [ "failure", "retry" ],
+            "source" : {
+              "comments" : "",
+              "groupId" : "601b1860-275b-39cf-91c2-d29368f31785",
+              "id" : "0d9ba3c5-410d-38ab-8338-84c7aaac7069",
+              "instanceIdentifier" : "513f82c2-50a4-38a9-58e1-ccdeab8840bb",
+              "name" : "PutSQL",
+              "type" : "PROCESSOR"
+            },
+            "zIndex" : 0
+          } ],
+          "controllerServices" : [ ],
+          "defaultBackPressureDataSizeThreshold" : "3 GB",
+          "defaultBackPressureObjectThreshold" : 10000,
+          "defaultFlowFileExpiration" : "0 sec",
+          "flowFileConcurrency" : "UNBOUNDED",
+          "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
+          "funnels" : [ ],
+          "groupIdentifier" : "b87149a7-5bcb-3a2c-9ff5-eca1b275c140",
+          "identifier" : "601b1860-275b-39cf-91c2-d29368f31785",
+          "inputPorts" : [ ],
+          "instanceIdentifier" : "f090876c-e2d5-30a8-561c-90b2d429ea9d",
+          "labels" : [ ],
+          "logFileSuffix" : "",
+          "name" : "PIPICreator",
+          "outputPorts" : [ ],
+          "parameterContextName" : "CM_LKP_REPORT_MARKET",
+          "position" : {
+            "x" : 5616.0,
+            "y" : 2768.0
+          },
+          "processGroups" : [ ],
+          "processors" : [ {
+            "autoTerminatedRelationships" : [ ],
+            "backoffMechanism" : "PENALIZE_FLOWFILE",
+            "bulletinLevel" : "WARN",
+            "bundle" : {
+              "artifact" : "nifi-standard-nar",
+              "group" : "org.apache.nifi",
+              "version" : "1.28.0"
+            },
+            "comments" : "",
+            "componentType" : "PROCESSOR",
+            "concurrentlySchedulableTaskCount" : 1,
+            "executionNode" : "ALL",
+            "groupIdentifier" : "601b1860-275b-39cf-91c2-d29368f31785",
+            "identifier" : "56d6e7be-2635-3d41-a8f5-8c989ffb77b3",
+            "instanceIdentifier" : "d45d9005-159a-3245-7839-2ba87ec0b122",
+            "maxBackoffPeriod" : "10 mins",
+            "name" : "GenerateFlowFile",
+            "penaltyDuration" : "30 sec",
+            "position" : {
+              "x" : 696.0,
+              "y" : 1048.0
+            },
+            "properties" : {
+              "character-set" : "UTF-8",
+              "File Size" : "0B",
+              "Batch Size" : "1",
+              "Unique FlowFiles" : "false",
+              "Data Format" : "Text"
+            },
+            "propertyDescriptors" : {
+              "character-set" : {
+                "displayName" : "Character Set",
+                "identifiesControllerService" : false,
+                "name" : "character-set",
+                "sensitive" : false
+              },
+              "File Size" : {
+                "displayName" : "File Size",
+                "identifiesControllerService" : false,
+                "name" : "File Size",
+                "sensitive" : false
+              },
+              "mime-type" : {
+                "displayName" : "Mime Type",
+                "identifiesControllerService" : false,
+                "name" : "mime-type",
+                "sensitive" : false
+              },
+              "generate-ff-custom-text" : {
+                "displayName" : "Custom Text",
+                "identifiesControllerService" : false,
+                "name" : "generate-ff-custom-text",
+                "sensitive" : false
+              },
+              "Batch Size" : {
+                "displayName" : "Batch Size",
+                "identifiesControllerService" : false,
+                "name" : "Batch Size",
+                "sensitive" : false
+              },
+              "Unique FlowFiles" : {
+                "displayName" : "Unique FlowFiles",
+                "identifiesControllerService" : false,
+                "name" : "Unique FlowFiles",
+                "sensitive" : false
+              },
+              "Data Format" : {
+                "displayName" : "Data Format",
+                "identifiesControllerService" : false,
+                "name" : "Data Format",
+                "sensitive" : false
+              }
+            },
+            "retriedRelationships" : [ ],
+            "retryCount" : 10,
+            "runDurationMillis" : 0,
+            "scheduledState" : "ENABLED",
+            "schedulingPeriod" : "100 day",
+            "schedulingStrategy" : "TIMER_DRIVEN",
+            "style" : { },
+            "type" : "org.apache.nifi.processors.standard.GenerateFlowFile",
+            "yieldDuration" : "1 sec"
+          }, {
+            "autoTerminatedRelationships" : [ "success" ],
+            "backoffMechanism" : "PENALIZE_FLOWFILE",
+            "bulletinLevel" : "INFO",
+            "bundle" : {
+              "artifact" : "nifi-standard-nar",
+              "group" : "org.apache.nifi",
+              "version" : "1.28.0"
+            },
+            "comments" : "",
+            "componentType" : "PROCESSOR",
+            "concurrentlySchedulableTaskCount" : 1,
+            "executionNode" : "ALL",
+            "groupIdentifier" : "601b1860-275b-39cf-91c2-d29368f31785",
+            "identifier" : "85d894a2-7487-3a3a-8a04-5c98501a4714",
+            "instanceIdentifier" : "08253004-343f-363b-9eac-246338e65b07",
+            "maxBackoffPeriod" : "10 mins",
+            "name" : "LogAttribute",
+            "penaltyDuration" : "30 sec",
+            "position" : {
+              "x" : 1328.0,
+              "y" : 1600.0
+            },
+            "properties" : {
+              "character-set" : "UTF-8",
+              "Log FlowFile Properties" : "true",
+              "Log Level" : "warn",
+              "attributes-to-log-regex" : ".*",
+              "Output Format" : "Single Line",
+              "Log Payload" : "false"
+            },
+            "propertyDescriptors" : {
+              "Log prefix" : {
+                "displayName" : "Log prefix",
+                "identifiesControllerService" : false,
+                "name" : "Log prefix",
+                "sensitive" : false
+              },
+              "character-set" : {
+                "displayName" : "Character Set",
+                "identifiesControllerService" : false,
+                "name" : "character-set",
+                "sensitive" : false
+              },
+              "Log FlowFile Properties" : {
+                "displayName" : "Log FlowFile Properties",
+                "identifiesControllerService" : false,
+                "name" : "Log FlowFile Properties",
+                "sensitive" : false
+              },
+              "Log Level" : {
+                "displayName" : "Log Level",
+                "identifiesControllerService" : false,
+                "name" : "Log Level",
+                "sensitive" : false
+              },
+              "attributes-to-ignore-regex" : {
+                "displayName" : "Attributes to Ignore by Regular Expression",
+                "identifiesControllerService" : false,
+                "name" : "attributes-to-ignore-regex",
+                "sensitive" : false
+              },
+              "Attributes to Ignore" : {
+                "displayName" : "Attributes to Ignore",
+                "identifiesControllerService" : false,
+                "name" : "Attributes to Ignore",
+                "sensitive" : false
+              },
+              "Attributes to Log" : {
+                "displayName" : "Attributes to Log",
+                "identifiesControllerService" : false,
+                "name" : "Attributes to Log",
+                "sensitive" : false
+              },
+              "attributes-to-log-regex" : {
+                "displayName" : "Attributes to Log by Regular Expression",
+                "identifiesControllerService" : false,
+                "name" : "attributes-to-log-regex",
+                "sensitive" : false
+              },
+              "Output Format" : {
+                "displayName" : "Output Format",
+                "identifiesControllerService" : false,
+                "name" : "Output Format",
+                "sensitive" : false
+              },
+              "Log Payload" : {
+                "displayName" : "Log Payload",
+                "identifiesControllerService" : false,
+                "name" : "Log Payload",
+                "sensitive" : false
+              }
+            },
+            "retriedRelationships" : [ ],
+            "retryCount" : 10,
+            "runDurationMillis" : 25,
+            "scheduledState" : "ENABLED",
+            "schedulingPeriod" : "1 sec",
+            "schedulingStrategy" : "TIMER_DRIVEN",
+            "style" : { },
+            "type" : "org.apache.nifi.processors.standard.LogAttribute",
+            "yieldDuration" : "1 sec"
+          }, {
+            "autoTerminatedRelationships" : [ ],
+            "backoffMechanism" : "PENALIZE_FLOWFILE",
+            "bulletinLevel" : "WARN",
+            "bundle" : {
+              "artifact" : "nifi-standard-nar",
+              "group" : "org.apache.nifi",
+              "version" : "1.28.0"
+            },
+            "comments" : "",
+            "componentType" : "PROCESSOR",
+            "concurrentlySchedulableTaskCount" : 1,
+            "executionNode" : "ALL",
+            "groupIdentifier" : "601b1860-275b-39cf-91c2-d29368f31785",
+            "identifier" : "5510500d-a1c3-339d-968c-8c5812907b68",
+            "instanceIdentifier" : "b5594539-a545-3078-87ff-8d30608f3d6a",
+            "maxBackoffPeriod" : "10 mins",
+            "name" : "PutSQL",
+            "penaltyDuration" : "30 sec",
+            "position" : {
+              "x" : 704.0,
+              "y" : 1608.0
+            },
+            "properties" : {
+              "Support Fragmented Transactions" : "true",
+              "putsql-sql-statement" : "TRUNCATE TABLE IF EXISTS #{TARGET_TABLE_NAME};",
+              "Batch Size" : "100",
+              "Obtain Generated Keys" : "false",
+              "JDBC Connection Pool" : "84daa789-79ae-3571-82b5-69fd1aee15cd",
+              "database-session-autocommit" : "false",
+              "rollback-on-failure" : "false"
+            },
+            "propertyDescriptors" : {
+              "Support Fragmented Transactions" : {
+                "displayName" : "Support Fragmented Transactions",
+                "identifiesControllerService" : false,
+                "name" : "Support Fragmented Transactions",
+                "sensitive" : false
+              },
+              "putsql-sql-statement" : {
+                "displayName" : "SQL Statement",
+                "identifiesControllerService" : false,
+                "name" : "putsql-sql-statement",
+                "sensitive" : false
+              },
+              "Transaction Timeout" : {
+                "displayName" : "Transaction Timeout",
+                "identifiesControllerService" : false,
+                "name" : "Transaction Timeout",
+                "sensitive" : false
+              },
+              "Batch Size" : {
+                "displayName" : "Batch Size",
+                "identifiesControllerService" : false,
+                "name" : "Batch Size",
+                "sensitive" : false
+              },
+              "Obtain Generated Keys" : {
+                "displayName" : "Obtain Generated Keys",
+                "identifiesControllerService" : false,
+                "name" : "Obtain Generated Keys",
+                "sensitive" : false
+              },
+              "JDBC Connection Pool" : {
+                "displayName" : "JDBC Connection Pool",
+                "identifiesControllerService" : true,
+                "name" : "JDBC Connection Pool",
+                "sensitive" : false
+              },
+              "database-session-autocommit" : {
+                "displayName" : "Database Session AutoCommit",
+                "identifiesControllerService" : false,
+                "name" : "database-session-autocommit",
+                "sensitive" : false
+              },
+              "rollback-on-failure" : {
+                "displayName" : "Rollback On Failure",
+                "identifiesControllerService" : false,
+                "name" : "rollback-on-failure",
+                "sensitive" : false
+              }
+            },
+            "retriedRelationships" : [ ],
+            "retryCount" : 10,
+            "runDurationMillis" : 0,
+            "scheduledState" : "ENABLED",
+            "schedulingPeriod" : "0 sec",
+            "schedulingStrategy" : "TIMER_DRIVEN",
+            "style" : { },
+            "type" : "org.apache.nifi.processors.standard.PutSQL",
+            "yieldDuration" : "1 sec"
+          }, {
+            "autoTerminatedRelationships" : [ ],
+            "backoffMechanism" : "PENALIZE_FLOWFILE",
+            "bulletinLevel" : "WARN",
+            "bundle" : {
+              "artifact" : "nifi-standard-nar",
+              "group" : "org.apache.nifi",
+              "version" : "1.28.0"
+            },
+            "comments" : "",
+            "componentType" : "PROCESSOR",
+            "concurrentlySchedulableTaskCount" : 1,
+            "executionNode" : "ALL",
+            "groupIdentifier" : "601b1860-275b-39cf-91c2-d29368f31785",
+            "identifier" : "0d9ba3c5-410d-38ab-8338-84c7aaac7069",
+            "instanceIdentifier" : "513f82c2-50a4-38a9-58e1-ccdeab8840bb",
+            "maxBackoffPeriod" : "10 mins",
+            "name" : "PutSQL",
+            "penaltyDuration" : "30 sec",
+            "position" : {
+              "x" : 704.0,
+              "y" : 1232.0
+            },
+            "properties" : {
+              "Support Fragmented Transactions" : "true",
+              "putsql-sql-statement" : "CREATE OR REPLACE\nSTAGE #{STAGE_NAME}\nFILE_FORMAT = (TYPE = 'JSON');",
+              "Batch Size" : "100",
+              "Obtain Generated Keys" : "false",
+              "JDBC Connection Pool" : "84daa789-79ae-3571-82b5-69fd1aee15cd",
+              "database-session-autocommit" : "false",
+              "rollback-on-failure" : "false"
+            },
+            "propertyDescriptors" : {
+              "Support Fragmented Transactions" : {
+                "displayName" : "Support Fragmented Transactions",
+                "identifiesControllerService" : false,
+                "name" : "Support Fragmented Transactions",
+                "sensitive" : false
+              },
+              "putsql-sql-statement" : {
+                "displayName" : "SQL Statement",
+                "identifiesControllerService" : false,
+                "name" : "putsql-sql-statement",
+                "sensitive" : false
+              },
+              "Transaction Timeout" : {
+                "displayName" : "Transaction Timeout",
+                "identifiesControllerService" : false,
+                "name" : "Transaction Timeout",
+                "sensitive" : false
+              },
+              "Batch Size" : {
+                "displayName" : "Batch Size",
+                "identifiesControllerService" : false,
+                "name" : "Batch Size",
+                "sensitive" : false
+              },
+              "Obtain Generated Keys" : {
+                "displayName" : "Obtain Generated Keys",
+                "identifiesControllerService" : false,
+                "name" : "Obtain Generated Keys",
+                "sensitive" : false
+              },
+              "JDBC Connection Pool" : {
+                "displayName" : "JDBC Connection Pool",
+                "identifiesControllerService" : true,
+                "name" : "JDBC Connection Pool",
+                "sensitive" : false
+              },
+              "database-session-autocommit" : {
+                "displayName" : "Database Session AutoCommit",
+                "identifiesControllerService" : false,
+                "name" : "database-session-autocommit",
+                "sensitive" : false
+              },
+              "rollback-on-failure" : {
+                "displayName" : "Rollback On Failure",
+                "identifiesControllerService" : false,
+                "name" : "rollback-on-failure",
+                "sensitive" : false
+              }
+            },
+            "retriedRelationships" : [ ],
+            "retryCount" : 10,
+            "runDurationMillis" : 0,
+            "scheduledState" : "ENABLED",
+            "schedulingPeriod" : "0 sec",
+            "schedulingStrategy" : "TIMER_DRIVEN",
+            "style" : { },
+            "type" : "org.apache.nifi.processors.standard.PutSQL",
+            "yieldDuration" : "1 sec"
+          }, {
+            "autoTerminatedRelationships" : [ ],
+            "backoffMechanism" : "PENALIZE_FLOWFILE",
+            "bulletinLevel" : "WARN",
+            "bundle" : {
+              "artifact" : "nifi-standard-nar",
+              "group" : "org.apache.nifi",
+              "version" : "1.28.0"
+            },
+            "comments" : "",
+            "componentType" : "PROCESSOR",
+            "concurrentlySchedulableTaskCount" : 1,
+            "executionNode" : "ALL",
+            "groupIdentifier" : "601b1860-275b-39cf-91c2-d29368f31785",
+            "identifier" : "c5da811c-5001-32db-99f1-cd4e5a5475d5",
+            "instanceIdentifier" : "7788eb97-2475-3613-3eb2-5f794dd548ef",
+            "maxBackoffPeriod" : "10 mins",
+            "name" : "PutSQL",
+            "penaltyDuration" : "30 sec",
+            "position" : {
+              "x" : 704.0,
+              "y" : 1424.0
+            },
+            "properties" : {
+              "Support Fragmented Transactions" : "true",
+              "putsql-sql-statement" : "CREATE OR REPLACE PIPE #{PIPE_NAME} AS\nCOPY INTO #{TARGET_TABLE_NAME}\nFROM @#{STAGE_NAME}\nFILE_FORMAT = (TYPE = 'JSON')\nMATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;",
+              "Batch Size" : "100",
+              "Obtain Generated Keys" : "false",
+              "JDBC Connection Pool" : "84daa789-79ae-3571-82b5-69fd1aee15cd",
+              "database-session-autocommit" : "false",
+              "rollback-on-failure" : "false"
+            },
+            "propertyDescriptors" : {
+              "Support Fragmented Transactions" : {
+                "displayName" : "Support Fragmented Transactions",
+                "identifiesControllerService" : false,
+                "name" : "Support Fragmented Transactions",
+                "sensitive" : false
+              },
+              "putsql-sql-statement" : {
+                "displayName" : "SQL Statement",
+                "identifiesControllerService" : false,
+                "name" : "putsql-sql-statement",
+                "sensitive" : false
+              },
+              "Transaction Timeout" : {
+                "displayName" : "Transaction Timeout",
+                "identifiesControllerService" : false,
+                "name" : "Transaction Timeout",
+                "sensitive" : false
+              },
+              "Batch Size" : {
+                "displayName" : "Batch Size",
+                "identifiesControllerService" : false,
+                "name" : "Batch Size",
+                "sensitive" : false
+              },
+              "Obtain Generated Keys" : {
+                "displayName" : "Obtain Generated Keys",
+                "identifiesControllerService" : false,
+                "name" : "Obtain Generated Keys",
+                "sensitive" : false
+              },
+              "JDBC Connection Pool" : {
+                "displayName" : "JDBC Connection Pool",
+                "identifiesControllerService" : true,
+                "name" : "JDBC Connection Pool",
+                "sensitive" : false
+              },
+              "database-session-autocommit" : {
+                "displayName" : "Database Session AutoCommit",
+                "identifiesControllerService" : false,
+                "name" : "database-session-autocommit",
+                "sensitive" : false
+              },
+              "rollback-on-failure" : {
+                "displayName" : "Rollback On Failure",
+                "identifiesControllerService" : false,
+                "name" : "rollback-on-failure",
+                "sensitive" : false
+              }
+            },
+            "retriedRelationships" : [ ],
+            "retryCount" : 10,
+            "runDurationMillis" : 0,
+            "scheduledState" : "ENABLED",
+            "schedulingPeriod" : "0 sec",
+            "schedulingStrategy" : "TIMER_DRIVEN",
+            "style" : { },
+            "type" : "org.apache.nifi.processors.standard.PutSQL",
+            "yieldDuration" : "1 sec"
+          } ],
+          "remoteProcessGroups" : [ ],
+          "variables" : {
+            "TABLE_NAME" : "CM_TRG_FACT_LOAD_V1",
+            "PIPE_NAME" : "CM_TRG_FACT_LOAD_INGESTION_PIPE",
+            "STAGE_NAME" : "STG_NIFI_DEV"
+          }
+        }, {
+          "comments" : "",
+          "componentType" : "PROCESS_GROUP",
+          "connections" : [ {
+            "backPressureDataSizeThreshold" : "3 GB",
+            "backPressureObjectThreshold" : 10000,
+            "bends" : [ ],
+            "componentType" : "CONNECTION",
+            "destination" : {
+              "comments" : "",
+              "groupId" : "5a8c1b67-038c-3881-8b54-28b710a0a121",
+              "id" : "ad4f1b84-a813-3255-a314-2a555aaa69f3",
+              "instanceIdentifier" : "151aac6e-d357-3b80-d2cf-f5acf126ff6f",
+              "name" : "LogAttribute",
+              "type" : "PROCESSOR"
+            },
+            "flowFileExpiration" : "0 sec",
+            "groupIdentifier" : "5a8c1b67-038c-3881-8b54-28b710a0a121",
+            "identifier" : "4f559ea6-ca5f-3119-a0c5-823ea1b5ae29",
+            "instanceIdentifier" : "1b37e9e9-03b7-3f78-48f3-29260aab0d4b",
+            "labelIndex" : 1,
+            "loadBalanceCompression" : "DO_NOT_COMPRESS",
+            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+            "name" : "",
+            "partitioningAttribute" : "",
+            "prioritizers" : [ ],
+            "selectedRelationships" : [ "" ],
+            "source" : {
+              "comments" : "",
+              "groupId" : "5a8c1b67-038c-3881-8b54-28b710a0a121",
+              "id" : "ed40871c-b326-362e-b66b-6fb1919c1797",
+              "instanceIdentifier" : "b8e3d761-1db0-30ce-c973-b5c5a239ec02",
+              "name" : "Funnel",
+              "type" : "FUNNEL"
+            },
+            "zIndex" : 0
+          }, {
+            "backPressureDataSizeThreshold" : "3 GB",
+            "backPressureObjectThreshold" : 10000,
+            "bends" : [ ],
+            "componentType" : "CONNECTION",
+            "destination" : {
+              "groupId" : "5a8c1b67-038c-3881-8b54-28b710a0a121",
+              "id" : "cc417456-33a4-3bb2-aa4b-83e8e1edae70",
+              "instanceIdentifier" : "99648d3a-991d-35ab-c608-aa5e2156e323",
+              "name" : "CSVStream",
+              "type" : "OUTPUT_PORT"
+            },
+            "flowFileExpiration" : "0 sec",
+            "groupIdentifier" : "5a8c1b67-038c-3881-8b54-28b710a0a121",
+            "identifier" : "ed163afb-a3b3-3a30-bcbb-92fd67512b53",
+            "instanceIdentifier" : "f9d5f92f-1b2b-31d2-9b63-025c383c4a22",
+            "labelIndex" : 1,
+            "loadBalanceCompression" : "DO_NOT_COMPRESS",
+            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+            "name" : "",
+            "partitioningAttribute" : "",
+            "prioritizers" : [ ],
+            "selectedRelationships" : [ "" ],
+            "source" : {
+              "comments" : "",
+              "groupId" : "5a8c1b67-038c-3881-8b54-28b710a0a121",
+              "id" : "ed40871c-b326-362e-b66b-6fb1919c1797",
+              "instanceIdentifier" : "b8e3d761-1db0-30ce-c973-b5c5a239ec02",
+              "name" : "Funnel",
+              "type" : "FUNNEL"
+            },
+            "zIndex" : 0
+          }, {
+            "backPressureDataSizeThreshold" : "3 GB",
+            "backPressureObjectThreshold" : 10000,
+            "bends" : [ ],
+            "componentType" : "CONNECTION",
+            "destination" : {
+              "comments" : "",
+              "groupId" : "5a8c1b67-038c-3881-8b54-28b710a0a121",
+              "id" : "ed40871c-b326-362e-b66b-6fb1919c1797",
+              "instanceIdentifier" : "b8e3d761-1db0-30ce-c973-b5c5a239ec02",
+              "name" : "Funnel",
+              "type" : "FUNNEL"
+            },
+            "flowFileExpiration" : "0 sec",
+            "groupIdentifier" : "5a8c1b67-038c-3881-8b54-28b710a0a121",
+            "identifier" : "c482e8e6-552f-3f9e-bf0f-97efb43b5c65",
+            "instanceIdentifier" : "ab1f1e82-c23b-39f1-0508-b43b30eb09ca",
+            "labelIndex" : 1,
+            "loadBalanceCompression" : "DO_NOT_COMPRESS",
+            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+            "name" : "",
+            "partitioningAttribute" : "",
+            "prioritizers" : [ ],
+            "selectedRelationships" : [ "success" ],
+            "source" : {
+              "comments" : "",
+              "groupId" : "5a8c1b67-038c-3881-8b54-28b710a0a121",
+              "id" : "3d6cd61d-89b5-3bee-bbd1-df0e49169ad0",
+              "instanceIdentifier" : "16952495-294b-34fd-b02d-632011584eb7",
+              "name" : "QueryDatabaseTableRecord",
+              "type" : "PROCESSOR"
+            },
+            "zIndex" : 0
+          } ],
+          "controllerServices" : [ {
+            "bulletinLevel" : "WARN",
+            "bundle" : {
+              "artifact" : "nifi-record-serialization-services-nar",
+              "group" : "org.apache.nifi",
+              "version" : "1.28.0"
+            },
+            "comments" : "",
+            "componentType" : "CONTROLLER_SERVICE",
+            "controllerServiceApis" : [ {
+              "bundle" : {
+                "artifact" : "nifi-standard-services-api-nar",
+                "group" : "org.apache.nifi",
+                "version" : "1.28.0"
+              },
+              "type" : "org.apache.nifi.serialization.RecordSetWriterFactory"
+            } ],
+            "groupIdentifier" : "5a8c1b67-038c-3881-8b54-28b710a0a121",
+            "identifier" : "dabbe616-1139-30a6-9097-0e316910c302",
+            "instanceIdentifier" : "c1ede1cb-89e3-3834-68ac-f1237cb00017",
+            "name" : "JsonRecordSetWriter",
+            "properties" : {
+              "Allow Scientific Notation" : "false",
+              "compression-level" : "1",
+              "Pretty Print JSON" : "false",
+              "compression-format" : "none",
+              "Schema Write Strategy" : "no-schema",
+              "suppress-nulls" : "never-suppress",
+              "output-grouping" : "output-oneline",
+              "schema-name" : "${schema.name}",
+              "schema-access-strategy" : "inherit-record-schema",
+              "schema-protocol-version" : "1",
+              "schema-text" : "${avro.schema}"
+            },
+            "propertyDescriptors" : {
+              "schema-branch" : {
+                "displayName" : "Schema Branch",
+                "identifiesControllerService" : false,
+                "name" : "schema-branch",
+                "sensitive" : false
+              },
+              "Allow Scientific Notation" : {
+                "displayName" : "Allow Scientific Notation",
+                "identifiesControllerService" : false,
+                "name" : "Allow Scientific Notation",
+                "sensitive" : false
+              },
+              "compression-level" : {
+                "displayName" : "Compression Level",
+                "identifiesControllerService" : false,
+                "name" : "compression-level",
+                "sensitive" : false
+              },
+              "schema-cache" : {
+                "displayName" : "Schema Cache",
+                "identifiesControllerService" : true,
+                "name" : "schema-cache",
+                "sensitive" : false
+              },
+              "Timestamp Format" : {
+                "displayName" : "Timestamp Format",
+                "identifiesControllerService" : false,
+                "name" : "Timestamp Format",
+                "sensitive" : false
+              },
+              "Date Format" : {
+                "displayName" : "Date Format",
+                "identifiesControllerService" : false,
+                "name" : "Date Format",
+                "sensitive" : false
+              },
+              "Pretty Print JSON" : {
+                "displayName" : "Pretty Print JSON",
+                "identifiesControllerService" : false,
+                "name" : "Pretty Print JSON",
+                "sensitive" : false
+              },
+              "compression-format" : {
+                "displayName" : "Compression Format",
+                "identifiesControllerService" : false,
+                "name" : "compression-format",
+                "sensitive" : false
+              },
+              "Schema Write Strategy" : {
+                "displayName" : "Schema Write Strategy",
+                "identifiesControllerService" : false,
+                "name" : "Schema Write Strategy",
+                "sensitive" : false
+              },
+              "suppress-nulls" : {
+                "displayName" : "Suppress Null Values",
+                "identifiesControllerService" : false,
+                "name" : "suppress-nulls",
+                "sensitive" : false
+              },
+              "output-grouping" : {
+                "displayName" : "Output Grouping",
+                "identifiesControllerService" : false,
+                "name" : "output-grouping",
+                "sensitive" : false
+              },
+              "schema-name" : {
+                "displayName" : "Schema Name",
+                "identifiesControllerService" : false,
+                "name" : "schema-name",
+                "sensitive" : false
+              },
+              "schema-registry" : {
+                "displayName" : "Schema Registry",
+                "identifiesControllerService" : true,
+                "name" : "schema-registry",
+                "sensitive" : false
+              },
+              "Time Format" : {
+                "displayName" : "Time Format",
+                "identifiesControllerService" : false,
+                "name" : "Time Format",
+                "sensitive" : false
+              },
+              "schema-access-strategy" : {
+                "displayName" : "Schema Access Strategy",
+                "identifiesControllerService" : false,
+                "name" : "schema-access-strategy",
+                "sensitive" : false
+              },
+              "schema-protocol-version" : {
+                "displayName" : "Schema Protocol Version",
+                "identifiesControllerService" : false,
+                "name" : "schema-protocol-version",
+                "sensitive" : false
+              },
+              "schema-version" : {
+                "displayName" : "Schema Version",
+                "identifiesControllerService" : false,
+                "name" : "schema-version",
+                "sensitive" : false
+              },
+              "schema-text" : {
+                "displayName" : "Schema Text",
+                "identifiesControllerService" : false,
+                "name" : "schema-text",
+                "sensitive" : false
+              }
+            },
+            "scheduledState" : "DISABLED",
+            "type" : "org.apache.nifi.json.JsonRecordSetWriter"
+          } ],
+          "defaultBackPressureDataSizeThreshold" : "3 GB",
+          "defaultBackPressureObjectThreshold" : 10000,
+          "defaultFlowFileExpiration" : "0 sec",
+          "flowFileConcurrency" : "UNBOUNDED",
+          "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
+          "funnels" : [ {
+            "componentType" : "FUNNEL",
+            "groupIdentifier" : "5a8c1b67-038c-3881-8b54-28b710a0a121",
+            "identifier" : "ed40871c-b326-362e-b66b-6fb1919c1797",
+            "instanceIdentifier" : "b8e3d761-1db0-30ce-c973-b5c5a239ec02",
+            "position" : {
+              "x" : 2344.0,
+              "y" : -32.0
+            }
+          } ],
+          "groupIdentifier" : "b87149a7-5bcb-3a2c-9ff5-eca1b275c140",
+          "identifier" : "5a8c1b67-038c-3881-8b54-28b710a0a121",
+          "inputPorts" : [ ],
+          "instanceIdentifier" : "c3013b4c-d3bf-35ac-b86f-593086bb0bbc",
+          "labels" : [ ],
+          "logFileSuffix" : "",
+          "name" : "QueryDatabaseTableRecordGroupProcessor",
+          "outputPorts" : [ {
+            "allowRemoteAccess" : false,
+            "componentType" : "OUTPUT_PORT",
+            "concurrentlySchedulableTaskCount" : 1,
+            "groupIdentifier" : "5a8c1b67-038c-3881-8b54-28b710a0a121",
+            "identifier" : "cc417456-33a4-3bb2-aa4b-83e8e1edae70",
+            "instanceIdentifier" : "99648d3a-991d-35ab-c608-aa5e2156e323",
+            "name" : "CSVStream",
+            "position" : {
+              "x" : 2248.0,
+              "y" : 176.0
+            },
+            "scheduledState" : "ENABLED",
+            "type" : "OUTPUT_PORT"
+          } ],
+          "parameterContextName" : "CM_LKP_REPORT_MARKET",
+          "position" : {
+            "x" : 6120.0,
+            "y" : 2760.0
+          },
+          "processGroups" : [ ],
+          "processors" : [ {
+            "autoTerminatedRelationships" : [ ],
+            "backoffMechanism" : "PENALIZE_FLOWFILE",
+            "bulletinLevel" : "WARN",
+            "bundle" : {
+              "artifact" : "nifi-standard-nar",
+              "group" : "org.apache.nifi",
+              "version" : "1.28.0"
+            },
+            "comments" : "",
+            "componentType" : "PROCESSOR",
+            "concurrentlySchedulableTaskCount" : 1,
+            "executionNode" : "PRIMARY",
+            "groupIdentifier" : "5a8c1b67-038c-3881-8b54-28b710a0a121",
+            "identifier" : "3d6cd61d-89b5-3bee-bbd1-df0e49169ad0",
+            "instanceIdentifier" : "16952495-294b-34fd-b02d-632011584eb7",
+            "maxBackoffPeriod" : "10 mins",
+            "name" : "QueryDatabaseTableRecord",
+            "penaltyDuration" : "30 sec",
+            "position" : {
+              "x" : 1680.0,
+              "y" : -72.0
+            },
+            "properties" : {
+              "Table Name" : "CATMAN.#{SOURCE_TABLE_NAME}",
+              "db-fetch-db-type" : "Oracle",
+              "dbf-default-precision" : "10",
+              "qdbtr-record-writer" : "dabbe616-1139-30a6-9097-0e316910c302",
+              "Max Wait Time" : "0 seconds",
+              "Database Connection Pooling Service" : "3de863a4-81df-3ce8-a69c-53eb107932dc",
+              "dbf-user-logical-types" : "false",
+              "qdbt-output-batch-size" : "20",
+              "qdbt-max-rows" : "10000",
+              "qdbt-max-frags" : "0",
+              "dbf-default-scale" : "0",
+              "initial-load-strategy" : "Start at Beginning",
+              "Fetch Size" : "0",
+              "qdbtr-normalize" : "false"
+            },
+            "propertyDescriptors" : {
+              "Table Name" : {
+                "displayName" : "Table Name",
+                "identifiesControllerService" : false,
+                "name" : "Table Name",
+                "sensitive" : false
+              },
+              "db-fetch-db-type" : {
+                "displayName" : "Database Type",
+                "identifiesControllerService" : false,
+                "name" : "db-fetch-db-type",
+                "sensitive" : false
+              },
+              "dbf-default-precision" : {
+                "displayName" : "Default Decimal Precision",
+                "identifiesControllerService" : false,
+                "name" : "dbf-default-precision",
+                "sensitive" : false
+              },
+              "Set Auto Commit" : {
+                "displayName" : "Set Auto Commit",
+                "identifiesControllerService" : false,
+                "name" : "Set Auto Commit",
+                "sensitive" : false
+              },
+              "qdbtr-record-writer" : {
+                "displayName" : "Record Writer",
+                "identifiesControllerService" : true,
+                "name" : "qdbtr-record-writer",
+                "sensitive" : false
+              },
+              "Max Wait Time" : {
+                "displayName" : "Max Wait Time",
+                "identifiesControllerService" : false,
+                "name" : "Max Wait Time",
+                "sensitive" : false
+              },
+              "Database Connection Pooling Service" : {
+                "displayName" : "Database Connection Pooling Service",
+                "identifiesControllerService" : true,
+                "name" : "Database Connection Pooling Service",
+                "sensitive" : false
+              },
+              "Maximum-value Columns" : {
+                "displayName" : "Maximum-value Columns",
+                "identifiesControllerService" : false,
+                "name" : "Maximum-value Columns",
+                "sensitive" : false
+              },
+              "dbf-user-logical-types" : {
+                "displayName" : "Use Avro Logical Types",
+                "identifiesControllerService" : false,
+                "name" : "dbf-user-logical-types",
+                "sensitive" : false
+              },
+              "qdbt-output-batch-size" : {
+                "displayName" : "Output Batch Size",
+                "identifiesControllerService" : false,
+                "name" : "qdbt-output-batch-size",
+                "sensitive" : false
+              },
+              "qdbt-max-rows" : {
+                "displayName" : "Max Rows Per Flow File",
+                "identifiesControllerService" : false,
+                "name" : "qdbt-max-rows",
+                "sensitive" : false
+              },
+              "qdbt-max-frags" : {
+                "displayName" : "Maximum Number of Fragments",
+                "identifiesControllerService" : false,
+                "name" : "qdbt-max-frags",
+                "sensitive" : false
+              },
+              "dbf-default-scale" : {
+                "displayName" : "Default Decimal Scale",
+                "identifiesControllerService" : false,
+                "name" : "dbf-default-scale",
+                "sensitive" : false
+              },
+              "initial-load-strategy" : {
+                "displayName" : "Initial Load Strategy",
+                "identifiesControllerService" : false,
+                "name" : "initial-load-strategy",
+                "sensitive" : false
+              },
+              "Fetch Size" : {
+                "displayName" : "Fetch Size",
+                "identifiesControllerService" : false,
+                "name" : "Fetch Size",
+                "sensitive" : false
+              },
+              "db-fetch-sql-query" : {
+                "displayName" : "Custom Query",
+                "identifiesControllerService" : false,
+                "name" : "db-fetch-sql-query",
+                "sensitive" : false
+              },
+              "qdbtr-normalize" : {
+                "displayName" : "Normalize Table/Column Names",
+                "identifiesControllerService" : false,
+                "name" : "qdbtr-normalize",
+                "sensitive" : false
+              },
+              "Columns to Return" : {
+                "displayName" : "Columns to Return",
+                "identifiesControllerService" : false,
+                "name" : "Columns to Return",
+                "sensitive" : false
+              },
+              "db-fetch-where-clause" : {
+                "displayName" : "Additional WHERE clause",
+                "identifiesControllerService" : false,
+                "name" : "db-fetch-where-clause",
+                "sensitive" : false
+              }
+            },
+            "retriedRelationships" : [ ],
+            "retryCount" : 10,
+            "runDurationMillis" : 0,
+            "scheduledState" : "ENABLED",
+            "schedulingPeriod" : "1 day",
+            "schedulingStrategy" : "TIMER_DRIVEN",
+            "style" : { },
+            "type" : "org.apache.nifi.processors.standard.QueryDatabaseTableRecord",
+            "yieldDuration" : "1 sec"
+          }, {
+            "autoTerminatedRelationships" : [ "success" ],
+            "backoffMechanism" : "PENALIZE_FLOWFILE",
+            "bulletinLevel" : "INFO",
+            "bundle" : {
+              "artifact" : "nifi-standard-nar",
+              "group" : "org.apache.nifi",
+              "version" : "1.28.0"
+            },
+            "comments" : "",
+            "componentType" : "PROCESSOR",
+            "concurrentlySchedulableTaskCount" : 1,
+            "executionNode" : "ALL",
+            "groupIdentifier" : "5a8c1b67-038c-3881-8b54-28b710a0a121",
+            "identifier" : "ad4f1b84-a813-3255-a314-2a555aaa69f3",
+            "instanceIdentifier" : "151aac6e-d357-3b80-d2cf-f5acf126ff6f",
+            "maxBackoffPeriod" : "10 mins",
+            "name" : "LogAttribute",
+            "penaltyDuration" : "30 sec",
+            "position" : {
+              "x" : 2192.0,
+              "y" : -272.0
+            },
+            "properties" : {
+              "character-set" : "UTF-8",
+              "Log FlowFile Properties" : "true",
+              "Log Level" : "warn",
+              "attributes-to-log-regex" : ".*",
+              "Output Format" : "Single Line",
+              "Log Payload" : "false"
+            },
+            "propertyDescriptors" : {
+              "Log prefix" : {
+                "displayName" : "Log prefix",
+                "identifiesControllerService" : false,
+                "name" : "Log prefix",
+                "sensitive" : false
+              },
+              "character-set" : {
+                "displayName" : "Character Set",
+                "identifiesControllerService" : false,
+                "name" : "character-set",
+                "sensitive" : false
+              },
+              "Log FlowFile Properties" : {
+                "displayName" : "Log FlowFile Properties",
+                "identifiesControllerService" : false,
+                "name" : "Log FlowFile Properties",
+                "sensitive" : false
+              },
+              "Log Level" : {
+                "displayName" : "Log Level",
+                "identifiesControllerService" : false,
+                "name" : "Log Level",
+                "sensitive" : false
+              },
+              "attributes-to-ignore-regex" : {
+                "displayName" : "Attributes to Ignore by Regular Expression",
+                "identifiesControllerService" : false,
+                "name" : "attributes-to-ignore-regex",
+                "sensitive" : false
+              },
+              "Attributes to Ignore" : {
+                "displayName" : "Attributes to Ignore",
+                "identifiesControllerService" : false,
+                "name" : "Attributes to Ignore",
+                "sensitive" : false
+              },
+              "Attributes to Log" : {
+                "displayName" : "Attributes to Log",
+                "identifiesControllerService" : false,
+                "name" : "Attributes to Log",
+                "sensitive" : false
+              },
+              "attributes-to-log-regex" : {
+                "displayName" : "Attributes to Log by Regular Expression",
+                "identifiesControllerService" : false,
+                "name" : "attributes-to-log-regex",
+                "sensitive" : false
+              },
+              "Output Format" : {
+                "displayName" : "Output Format",
+                "identifiesControllerService" : false,
+                "name" : "Output Format",
+                "sensitive" : false
+              },
+              "Log Payload" : {
+                "displayName" : "Log Payload",
+                "identifiesControllerService" : false,
+                "name" : "Log Payload",
+                "sensitive" : false
+              }
+            },
+            "retriedRelationships" : [ ],
+            "retryCount" : 10,
+            "runDurationMillis" : 25,
+            "scheduledState" : "ENABLED",
+            "schedulingPeriod" : "1 sec",
+            "schedulingStrategy" : "TIMER_DRIVEN",
+            "style" : { },
+            "type" : "org.apache.nifi.processors.standard.LogAttribute",
+            "yieldDuration" : "1 sec"
+          } ],
+          "remoteProcessGroups" : [ ],
+          "variables" : { }
+        }, {
+          "comments" : "",
+          "componentType" : "PROCESS_GROUP",
+          "connections" : [ {
+            "backPressureDataSizeThreshold" : "1 GB",
+            "backPressureObjectThreshold" : 10000,
+            "bends" : [ ],
+            "componentType" : "CONNECTION",
+            "destination" : {
+              "comments" : "",
+              "groupId" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+              "id" : "7fb7e0e8-2b62-3df1-b099-9518fe77eb98",
+              "instanceIdentifier" : "41f3ea56-f541-3078-a2b8-7c161e180a1e",
+              "name" : "Funnel",
+              "type" : "FUNNEL"
+            },
+            "flowFileExpiration" : "0 sec",
+            "groupIdentifier" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+            "identifier" : "ea994d2e-3ef1-3681-9b2d-1816b6346cbe",
+            "instanceIdentifier" : "c6bc41ab-be79-3ecc-cd9c-e75a741c8784",
+            "labelIndex" : 1,
+            "loadBalanceCompression" : "DO_NOT_COMPRESS",
+            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+            "name" : "",
+            "partitioningAttribute" : "",
+            "prioritizers" : [ ],
+            "selectedRelationships" : [ "" ],
+            "source" : {
+              "comments" : "",
+              "groupId" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+              "id" : "9525f510-5662-3890-a1b5-adf568d2fa9b",
+              "instanceIdentifier" : "915b5386-b551-3b54-a4d0-c7634298bc94",
+              "name" : "Funnel",
+              "type" : "FUNNEL"
+            },
+            "zIndex" : 0
+          }, {
+            "backPressureDataSizeThreshold" : "1 GB",
+            "backPressureObjectThreshold" : 10000,
+            "bends" : [ ],
+            "componentType" : "CONNECTION",
+            "destination" : {
+              "comments" : "",
+              "groupId" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+              "id" : "b1c72f34-d095-3bab-be72-1ef2b15e2439",
+              "instanceIdentifier" : "64d32025-3e6a-304a-581a-fbabee2b5f09",
+              "name" : "PutSnowflakeInternalStage",
+              "type" : "PROCESSOR"
+            },
+            "flowFileExpiration" : "0 sec",
+            "groupIdentifier" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+            "identifier" : "ea2d859f-b06e-3d5e-8131-00a59de6ca70",
+            "instanceIdentifier" : "a26bdb4e-ef4f-3a09-49d3-8d807cdbc204",
+            "labelIndex" : 1,
+            "loadBalanceCompression" : "DO_NOT_COMPRESS",
+            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+            "name" : "",
+            "partitioningAttribute" : "",
+            "prioritizers" : [ ],
+            "selectedRelationships" : [ "" ],
+            "source" : {
+              "groupId" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+              "id" : "d20b5205-028b-34a6-b190-725c30de43c6",
+              "instanceIdentifier" : "d239e8f0-b3eb-380e-49ea-f9a5f35a635d",
+              "name" : "inputstream",
+              "type" : "INPUT_PORT"
+            },
+            "zIndex" : 0
+          }, {
+            "backPressureDataSizeThreshold" : "1 GB",
+            "backPressureObjectThreshold" : 10000,
+            "bends" : [ ],
+            "componentType" : "CONNECTION",
+            "destination" : {
+              "comments" : "",
+              "groupId" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+              "id" : "9525f510-5662-3890-a1b5-adf568d2fa9b",
+              "instanceIdentifier" : "915b5386-b551-3b54-a4d0-c7634298bc94",
+              "name" : "Funnel",
+              "type" : "FUNNEL"
+            },
+            "flowFileExpiration" : "0 sec",
+            "groupIdentifier" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+            "identifier" : "686504c3-74ee-353c-871d-6143ca78797a",
+            "instanceIdentifier" : "942c3a85-254d-3049-61d2-cac507590164",
+            "labelIndex" : 1,
+            "loadBalanceCompression" : "DO_NOT_COMPRESS",
+            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+            "name" : "",
+            "partitioningAttribute" : "",
+            "prioritizers" : [ ],
+            "selectedRelationships" : [ "failure" ],
+            "source" : {
+              "comments" : "",
+              "groupId" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+              "id" : "b1c72f34-d095-3bab-be72-1ef2b15e2439",
+              "instanceIdentifier" : "64d32025-3e6a-304a-581a-fbabee2b5f09",
+              "name" : "PutSnowflakeInternalStage",
+              "type" : "PROCESSOR"
+            },
+            "zIndex" : 0
+          }, {
+            "backPressureDataSizeThreshold" : "1 GB",
+            "backPressureObjectThreshold" : 10000,
+            "bends" : [ ],
+            "componentType" : "CONNECTION",
+            "destination" : {
+              "comments" : "",
+              "groupId" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+              "id" : "8b30b5a3-ad4e-3ebb-a34a-b48c6bb4962f",
+              "instanceIdentifier" : "fd8beb73-a9e2-337d-3797-4b9b7e9d1695",
+              "name" : "GetSnowflakeIngestStatus",
+              "type" : "PROCESSOR"
+            },
+            "flowFileExpiration" : "0 sec",
+            "groupIdentifier" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+            "identifier" : "d03870b9-6f85-32ad-9599-78a4fb40a881",
+            "instanceIdentifier" : "c8e6523b-c775-3f48-6122-65a5e6e95dbe",
+            "labelIndex" : 1,
+            "loadBalanceCompression" : "DO_NOT_COMPRESS",
+            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+            "name" : "",
+            "partitioningAttribute" : "",
+            "prioritizers" : [ ],
+            "selectedRelationships" : [ "success" ],
+            "source" : {
+              "comments" : "",
+              "groupId" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+              "id" : "ab537e88-7f08-39ca-9ad1-7a6b2f63da12",
+              "instanceIdentifier" : "819b6773-ce35-3760-cac3-49d831a91ed4",
+              "name" : "StartSnowflakeIngest",
+              "type" : "PROCESSOR"
+            },
+            "zIndex" : 0
+          }, {
+            "backPressureDataSizeThreshold" : "1 GB",
+            "backPressureObjectThreshold" : 10000,
+            "bends" : [ ],
+            "componentType" : "CONNECTION",
+            "destination" : {
+              "comments" : "",
+              "groupId" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+              "id" : "ab537e88-7f08-39ca-9ad1-7a6b2f63da12",
+              "instanceIdentifier" : "819b6773-ce35-3760-cac3-49d831a91ed4",
+              "name" : "StartSnowflakeIngest",
+              "type" : "PROCESSOR"
+            },
+            "flowFileExpiration" : "0 sec",
+            "groupIdentifier" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+            "identifier" : "932a7957-e9b1-3d22-8976-5f39b9892fdf",
+            "instanceIdentifier" : "5b0f764c-ea67-3a24-272a-3bc03e917e72",
+            "labelIndex" : 1,
+            "loadBalanceCompression" : "DO_NOT_COMPRESS",
+            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+            "name" : "",
+            "partitioningAttribute" : "",
+            "prioritizers" : [ ],
+            "selectedRelationships" : [ "success" ],
+            "source" : {
+              "comments" : "",
+              "groupId" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+              "id" : "b1c72f34-d095-3bab-be72-1ef2b15e2439",
+              "instanceIdentifier" : "64d32025-3e6a-304a-581a-fbabee2b5f09",
+              "name" : "PutSnowflakeInternalStage",
+              "type" : "PROCESSOR"
+            },
+            "zIndex" : 0
+          }, {
+            "backPressureDataSizeThreshold" : "1 GB",
+            "backPressureObjectThreshold" : 10000,
+            "bends" : [ {
+              "x" : 2568.0,
+              "y" : 8.0
+            } ],
+            "componentType" : "CONNECTION",
+            "destination" : {
+              "comments" : "",
+              "groupId" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+              "id" : "4114ae68-a587-363d-8b1d-5a1872ad53d8",
+              "instanceIdentifier" : "6fbd7005-2cc6-3e3b-5ebb-231a80ea74c8",
+              "name" : "LogAttribute",
+              "type" : "PROCESSOR"
+            },
+            "flowFileExpiration" : "0 sec",
+            "groupIdentifier" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+            "identifier" : "74911430-ab97-344d-b315-772ffdb678e0",
+            "instanceIdentifier" : "831697c2-5053-3aeb-052b-d80c4ecb7e32",
+            "labelIndex" : 1,
+            "loadBalanceCompression" : "DO_NOT_COMPRESS",
+            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+            "name" : "",
+            "partitioningAttribute" : "",
+            "prioritizers" : [ ],
+            "selectedRelationships" : [ "success" ],
+            "source" : {
+              "comments" : "",
+              "groupId" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+              "id" : "8b30b5a3-ad4e-3ebb-a34a-b48c6bb4962f",
+              "instanceIdentifier" : "fd8beb73-a9e2-337d-3797-4b9b7e9d1695",
+              "name" : "GetSnowflakeIngestStatus",
+              "type" : "PROCESSOR"
+            },
+            "zIndex" : 0
+          }, {
+            "backPressureDataSizeThreshold" : "1 GB",
+            "backPressureObjectThreshold" : 10000,
+            "bends" : [ ],
+            "componentType" : "CONNECTION",
+            "destination" : {
+              "comments" : "",
+              "groupId" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+              "id" : "4114ae68-a587-363d-8b1d-5a1872ad53d8",
+              "instanceIdentifier" : "6fbd7005-2cc6-3e3b-5ebb-231a80ea74c8",
+              "name" : "LogAttribute",
+              "type" : "PROCESSOR"
+            },
+            "flowFileExpiration" : "0 sec",
+            "groupIdentifier" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+            "identifier" : "34fd5e1e-29db-375a-b2bd-d64625d03182",
+            "instanceIdentifier" : "447e6214-c74a-37d9-aee4-bae202590b07",
+            "labelIndex" : 1,
+            "loadBalanceCompression" : "DO_NOT_COMPRESS",
+            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+            "name" : "",
+            "partitioningAttribute" : "",
+            "prioritizers" : [ ],
+            "selectedRelationships" : [ "" ],
+            "source" : {
+              "comments" : "",
+              "groupId" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+              "id" : "7fb7e0e8-2b62-3df1-b099-9518fe77eb98",
+              "instanceIdentifier" : "41f3ea56-f541-3078-a2b8-7c161e180a1e",
+              "name" : "Funnel",
+              "type" : "FUNNEL"
+            },
+            "zIndex" : 0
+          }, {
+            "backPressureDataSizeThreshold" : "1 GB",
+            "backPressureObjectThreshold" : 10000,
+            "bends" : [ ],
+            "componentType" : "CONNECTION",
+            "destination" : {
+              "comments" : "",
+              "groupId" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+              "id" : "4114ae68-a587-363d-8b1d-5a1872ad53d8",
+              "instanceIdentifier" : "6fbd7005-2cc6-3e3b-5ebb-231a80ea74c8",
+              "name" : "LogAttribute",
+              "type" : "PROCESSOR"
+            },
+            "flowFileExpiration" : "0 sec",
+            "groupIdentifier" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+            "identifier" : "3c545cff-45e5-3c08-90fd-d0b488aa393e",
+            "instanceIdentifier" : "40592373-c50c-3554-40e6-872b6f0ca84a",
+            "labelIndex" : 1,
+            "loadBalanceCompression" : "DO_NOT_COMPRESS",
+            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+            "name" : "",
+            "partitioningAttribute" : "",
+            "prioritizers" : [ ],
+            "selectedRelationships" : [ "failure" ],
+            "source" : {
+              "comments" : "",
+              "groupId" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+              "id" : "8b30b5a3-ad4e-3ebb-a34a-b48c6bb4962f",
+              "instanceIdentifier" : "fd8beb73-a9e2-337d-3797-4b9b7e9d1695",
+              "name" : "GetSnowflakeIngestStatus",
+              "type" : "PROCESSOR"
+            },
+            "zIndex" : 0
+          }, {
+            "backPressureDataSizeThreshold" : "1 GB",
+            "backPressureObjectThreshold" : 10000,
+            "bends" : [ ],
+            "componentType" : "CONNECTION",
+            "destination" : {
+              "comments" : "",
+              "groupId" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+              "id" : "7fb7e0e8-2b62-3df1-b099-9518fe77eb98",
+              "instanceIdentifier" : "41f3ea56-f541-3078-a2b8-7c161e180a1e",
+              "name" : "Funnel",
+              "type" : "FUNNEL"
+            },
+            "flowFileExpiration" : "0 sec",
+            "groupIdentifier" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+            "identifier" : "a82935bb-cd57-33b4-90d3-92e19fc363fa",
+            "instanceIdentifier" : "f77b57f6-e9fd-3195-560e-453aa98ba5a1",
+            "labelIndex" : 1,
+            "loadBalanceCompression" : "DO_NOT_COMPRESS",
+            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+            "name" : "",
+            "partitioningAttribute" : "",
+            "prioritizers" : [ ],
+            "selectedRelationships" : [ "failure" ],
+            "source" : {
+              "comments" : "",
+              "groupId" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+              "id" : "ab537e88-7f08-39ca-9ad1-7a6b2f63da12",
+              "instanceIdentifier" : "819b6773-ce35-3760-cac3-49d831a91ed4",
+              "name" : "StartSnowflakeIngest",
+              "type" : "PROCESSOR"
+            },
+            "zIndex" : 0
+          }, {
+            "backPressureDataSizeThreshold" : "1 GB",
+            "backPressureObjectThreshold" : 10000,
+            "bends" : [ {
+              "x" : 2392.0,
+              "y" : 80.0
+            }, {
+              "x" : 2064.0,
+              "y" : 104.0
+            } ],
+            "componentType" : "CONNECTION",
+            "destination" : {
+              "comments" : "",
+              "groupId" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+              "id" : "8b30b5a3-ad4e-3ebb-a34a-b48c6bb4962f",
+              "instanceIdentifier" : "fd8beb73-a9e2-337d-3797-4b9b7e9d1695",
+              "name" : "GetSnowflakeIngestStatus",
+              "type" : "PROCESSOR"
+            },
+            "flowFileExpiration" : "0 sec",
+            "groupIdentifier" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+            "identifier" : "64ef6ea8-2f13-379a-9310-990beac2c06e",
+            "instanceIdentifier" : "411f2ba4-c181-3a47-8ead-b1d49086dc4a",
+            "labelIndex" : 1,
+            "loadBalanceCompression" : "DO_NOT_COMPRESS",
+            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+            "name" : "",
+            "partitioningAttribute" : "",
+            "prioritizers" : [ ],
+            "selectedRelationships" : [ "retry" ],
+            "source" : {
+              "comments" : "",
+              "groupId" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+              "id" : "8b30b5a3-ad4e-3ebb-a34a-b48c6bb4962f",
+              "instanceIdentifier" : "fd8beb73-a9e2-337d-3797-4b9b7e9d1695",
+              "name" : "GetSnowflakeIngestStatus",
+              "type" : "PROCESSOR"
+            },
+            "zIndex" : 0
+          } ],
+          "controllerServices" : [ {
+            "bulletinLevel" : "WARN",
+            "bundle" : {
+              "artifact" : "nifi-snowflake-services-nar",
+              "group" : "org.apache.nifi",
+              "version" : "1.28.0"
+            },
+            "comments" : "",
+            "componentType" : "CONTROLLER_SERVICE",
+            "controllerServiceApis" : [ {
+              "bundle" : {
+                "artifact" : "nifi-snowflake-services-api-nar",
+                "group" : "org.apache.nifi",
+                "version" : "1.28.0"
+              },
+              "type" : "org.apache.nifi.processors.snowflake.SnowflakeIngestManagerProviderService"
+            } ],
+            "groupIdentifier" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+            "identifier" : "0afdd9f2-5b7e-37b3-acbe-c3669e080e12",
+            "instanceIdentifier" : "4d3bab15-74ba-3b2d-d541-2a0404ace1d3",
+            "name" : "CM_LKP_REPORT_MARKET_StandardSnowflakeIngestManagerProviderService",
+            "properties" : {
+              "schema" : "DE_SANDBOX",
+              "account-identifier-format" : "full-url",
+              "database" : "DB_SANDBOX",
+              "user-name" : "SVC-ACCOUNT-NIFI-DEV",
+              "private-key-service" : "f68dc7a2-3577-3cb3-bc6e-05c57d81b2ac",
+              "pipe" : "#{PIPE_NAME}",
+              "host-url" : "rndc-data.snowflakecomputing.com"
+            },
+            "propertyDescriptors" : {
+              "schema" : {
+                "displayName" : "Schema",
+                "identifiesControllerService" : false,
+                "name" : "schema",
+                "sensitive" : false
+              },
+              "account-name" : {
+                "displayName" : "Account Name",
+                "identifiesControllerService" : false,
+                "name" : "account-name",
+                "sensitive" : false
+              },
+              "account-identifier-format" : {
+                "displayName" : "Account Identifier Format",
+                "identifiesControllerService" : false,
+                "name" : "account-identifier-format",
+                "sensitive" : false
+              },
+              "database" : {
+                "displayName" : "Database",
+                "identifiesControllerService" : false,
+                "name" : "database",
+                "sensitive" : false
+              },
+              "cloud-type" : {
+                "displayName" : "Cloud Type",
+                "identifiesControllerService" : false,
+                "name" : "cloud-type",
+                "sensitive" : false
+              },
+              "user-name" : {
+                "displayName" : "User Name",
+                "identifiesControllerService" : false,
+                "name" : "user-name",
+                "sensitive" : false
+              },
+              "private-key-service" : {
+                "displayName" : "Private Key Service",
+                "identifiesControllerService" : true,
+                "name" : "private-key-service",
+                "sensitive" : false
+              },
+              "account-locator" : {
+                "displayName" : "Account Locator",
+                "identifiesControllerService" : false,
+                "name" : "account-locator",
+                "sensitive" : false
+              },
+              "pipe" : {
+                "displayName" : "Pipe",
+                "identifiesControllerService" : false,
+                "name" : "pipe",
+                "sensitive" : false
+              },
+              "host-url" : {
+                "displayName" : "Snowflake URL",
+                "identifiesControllerService" : false,
+                "name" : "host-url",
+                "sensitive" : false
+              },
+              "organization-name" : {
+                "displayName" : "Organization Name",
+                "identifiesControllerService" : false,
+                "name" : "organization-name",
+                "sensitive" : false
+              },
+              "cloud-region" : {
+                "displayName" : "Cloud Region",
+                "identifiesControllerService" : false,
+                "name" : "cloud-region",
+                "sensitive" : false
+              }
+            },
+            "scheduledState" : "DISABLED",
+            "type" : "org.apache.nifi.snowflake.service.StandardSnowflakeIngestManagerProviderService"
+          } ],
+          "defaultBackPressureDataSizeThreshold" : "3 GB",
+          "defaultBackPressureObjectThreshold" : 10000,
+          "defaultFlowFileExpiration" : "0 sec",
+          "flowFileConcurrency" : "UNBOUNDED",
+          "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
+          "funnels" : [ {
+            "componentType" : "FUNNEL",
+            "groupIdentifier" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+            "identifier" : "7fb7e0e8-2b62-3df1-b099-9518fe77eb98",
+            "instanceIdentifier" : "41f3ea56-f541-3078-a2b8-7c161e180a1e",
+            "position" : {
+              "x" : 2840.0,
+              "y" : -240.0
+            }
+          }, {
+            "componentType" : "FUNNEL",
+            "groupIdentifier" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+            "identifier" : "9525f510-5662-3890-a1b5-adf568d2fa9b",
+            "instanceIdentifier" : "915b5386-b551-3b54-a4d0-c7634298bc94",
+            "position" : {
+              "x" : 2840.0,
+              "y" : -424.0
+            }
+          } ],
+          "groupIdentifier" : "b87149a7-5bcb-3a2c-9ff5-eca1b275c140",
+          "identifier" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+          "inputPorts" : [ {
+            "allowRemoteAccess" : false,
+            "componentType" : "INPUT_PORT",
+            "concurrentlySchedulableTaskCount" : 1,
+            "groupIdentifier" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+            "identifier" : "d20b5205-028b-34a6-b190-725c30de43c6",
+            "instanceIdentifier" : "d239e8f0-b3eb-380e-49ea-f9a5f35a635d",
+            "name" : "inputstream",
+            "position" : {
+              "x" : 1800.0,
+              "y" : -576.0
+            },
+            "scheduledState" : "ENABLED",
+            "type" : "INPUT_PORT"
+          } ],
+          "instanceIdentifier" : "be85d70e-c9e2-3330-a975-ee6af8e57e70",
+          "labels" : [ ],
+          "logFileSuffix" : "",
+          "name" : "SnowflakeIngestGroup",
+          "outputPorts" : [ ],
+          "parameterContextName" : "CM_LKP_REPORT_MARKET",
+          "position" : {
+            "x" : 6680.0,
+            "y" : 2760.0
+          },
+          "processGroups" : [ ],
+          "processors" : [ {
+            "autoTerminatedRelationships" : [ ],
+            "backoffMechanism" : "PENALIZE_FLOWFILE",
+            "bulletinLevel" : "WARN",
+            "bundle" : {
+              "artifact" : "nifi-snowflake-processors-nar",
+              "group" : "org.apache.nifi",
+              "version" : "1.28.0"
+            },
+            "comments" : "",
+            "componentType" : "PROCESSOR",
+            "concurrentlySchedulableTaskCount" : 1,
+            "executionNode" : "ALL",
+            "groupIdentifier" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+            "identifier" : "8b30b5a3-ad4e-3ebb-a34a-b48c6bb4962f",
+            "instanceIdentifier" : "fd8beb73-a9e2-337d-3797-4b9b7e9d1695",
+            "maxBackoffPeriod" : "10 mins",
+            "name" : "GetSnowflakeIngestStatus",
+            "penaltyDuration" : "5 sec",
+            "position" : {
+              "x" : 2096.0,
+              "y" : -104.0
+            },
+            "properties" : {
+              "ingest-manager-provider" : "0afdd9f2-5b7e-37b3-acbe-c3669e080e12"
+            },
+            "propertyDescriptors" : {
+              "ingest-manager-provider" : {
+                "displayName" : "Ingest Manager Provider",
+                "identifiesControllerService" : true,
+                "name" : "ingest-manager-provider",
+                "sensitive" : false
+              }
+            },
+            "retriedRelationships" : [ ],
+            "retryCount" : 10,
+            "runDurationMillis" : 0,
+            "scheduledState" : "ENABLED",
+            "schedulingPeriod" : "0 sec",
+            "schedulingStrategy" : "TIMER_DRIVEN",
+            "style" : { },
+            "type" : "org.apache.nifi.processors.snowflake.GetSnowflakeIngestStatus",
+            "yieldDuration" : "1 sec"
+          }, {
+            "autoTerminatedRelationships" : [ ],
+            "backoffMechanism" : "PENALIZE_FLOWFILE",
+            "bulletinLevel" : "WARN",
+            "bundle" : {
+              "artifact" : "nifi-snowflake-processors-nar",
+              "group" : "org.apache.nifi",
+              "version" : "1.28.0"
+            },
+            "comments" : "",
+            "componentType" : "PROCESSOR",
+            "concurrentlySchedulableTaskCount" : 1,
+            "executionNode" : "ALL",
+            "groupIdentifier" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+            "identifier" : "b1c72f34-d095-3bab-be72-1ef2b15e2439",
+            "instanceIdentifier" : "64d32025-3e6a-304a-581a-fbabee2b5f09",
+            "maxBackoffPeriod" : "10 mins",
+            "name" : "PutSnowflakeInternalStage",
+            "penaltyDuration" : "30 sec",
+            "position" : {
+              "x" : 2096.0,
+              "y" : -464.0
+            },
+            "properties" : {
+              "schema" : "DE_SANDBOX",
+              "database" : "DB_SANDBOX",
+              "internal-stage-type" : "named",
+              "snowflake-connection-provider" : "84daa789-79ae-3571-82b5-69fd1aee15cd",
+              "table" : "CM_AGG_SALES",
+              "internal-stage" : "#{STAGE_NAME}"
+            },
+            "propertyDescriptors" : {
+              "schema" : {
+                "displayName" : "Schema",
+                "identifiesControllerService" : false,
+                "name" : "schema",
+                "sensitive" : false
+              },
+              "database" : {
+                "displayName" : "Database",
+                "identifiesControllerService" : false,
+                "name" : "database",
+                "sensitive" : false
+              },
+              "internal-stage-type" : {
+                "displayName" : "Internal Stage Type",
+                "identifiesControllerService" : false,
+                "name" : "internal-stage-type",
+                "sensitive" : false
+              },
+              "snowflake-connection-provider" : {
+                "displayName" : "Snowflake Connection Provider",
+                "identifiesControllerService" : true,
+                "name" : "snowflake-connection-provider",
+                "sensitive" : false
+              },
+              "table" : {
+                "displayName" : "Table",
+                "identifiesControllerService" : false,
+                "name" : "table",
+                "sensitive" : false
+              },
+              "internal-stage" : {
+                "displayName" : "Stage",
+                "identifiesControllerService" : false,
+                "name" : "internal-stage",
+                "sensitive" : false
+              }
+            },
+            "retriedRelationships" : [ ],
+            "retryCount" : 10,
+            "runDurationMillis" : 0,
+            "scheduledState" : "ENABLED",
+            "schedulingPeriod" : "0 sec",
+            "schedulingStrategy" : "TIMER_DRIVEN",
+            "style" : { },
+            "type" : "org.apache.nifi.processors.snowflake.PutSnowflakeInternalStage",
+            "yieldDuration" : "1 sec"
+          }, {
+            "autoTerminatedRelationships" : [ ],
+            "backoffMechanism" : "PENALIZE_FLOWFILE",
+            "bulletinLevel" : "WARN",
+            "bundle" : {
+              "artifact" : "nifi-snowflake-processors-nar",
+              "group" : "org.apache.nifi",
+              "version" : "1.28.0"
+            },
+            "comments" : "",
+            "componentType" : "PROCESSOR",
+            "concurrentlySchedulableTaskCount" : 1,
+            "executionNode" : "ALL",
+            "groupIdentifier" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+            "identifier" : "ab537e88-7f08-39ca-9ad1-7a6b2f63da12",
+            "instanceIdentifier" : "819b6773-ce35-3760-cac3-49d831a91ed4",
+            "maxBackoffPeriod" : "10 mins",
+            "name" : "StartSnowflakeIngest",
+            "penaltyDuration" : "30 sec",
+            "position" : {
+              "x" : 2096.0,
+              "y" : -280.0
+            },
+            "properties" : {
+              "ingest-manager-provider" : "0afdd9f2-5b7e-37b3-acbe-c3669e080e12"
+            },
+            "propertyDescriptors" : {
+              "ingest-manager-provider" : {
+                "displayName" : "Ingest Manager Provider",
+                "identifiesControllerService" : true,
+                "name" : "ingest-manager-provider",
+                "sensitive" : false
+              }
+            },
+            "retriedRelationships" : [ ],
+            "retryCount" : 10,
+            "runDurationMillis" : 0,
+            "scheduledState" : "ENABLED",
+            "schedulingPeriod" : "0 sec",
+            "schedulingStrategy" : "TIMER_DRIVEN",
+            "style" : { },
+            "type" : "org.apache.nifi.processors.snowflake.StartSnowflakeIngest",
+            "yieldDuration" : "1 sec"
+          }, {
+            "autoTerminatedRelationships" : [ ],
+            "backoffMechanism" : "PENALIZE_FLOWFILE",
+            "bulletinLevel" : "WARN",
+            "bundle" : {
+              "artifact" : "nifi-standard-nar",
+              "group" : "org.apache.nifi",
+              "version" : "1.28.0"
+            },
+            "comments" : "",
+            "componentType" : "PROCESSOR",
+            "concurrentlySchedulableTaskCount" : 1,
+            "executionNode" : "PRIMARY",
+            "groupIdentifier" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+            "identifier" : "d53a8415-c021-3cb6-8b50-2929a3ba5558",
+            "instanceIdentifier" : "05d4db78-7233-3e10-7f6d-6d9fe8cf3740",
+            "maxBackoffPeriod" : "10 mins",
+            "name" : "CATMAN.CM_AGG_SALES - QueryDatabaseTableRecord",
+            "penaltyDuration" : "30 sec",
+            "position" : {
+              "x" : 1016.0,
+              "y" : 2304.0
+            },
+            "properties" : {
+              "Table Name" : "CATMAN.CM_AGG_SALES",
+              "db-fetch-db-type" : "Oracle",
+              "dbf-default-precision" : "10",
+              "qdbtr-record-writer" : "1e1f83f1-96b9-313e-0000-000000000000",
+              "Max Wait Time" : "0 seconds",
+              "Database Connection Pooling Service" : "9db8bf02-2ae1-3e55-a29e-9729d52a7b80",
+              "dbf-user-logical-types" : "false",
+              "qdbt-output-batch-size" : "10",
+              "qdbt-max-rows" : "10000",
+              "qdbt-max-frags" : "0",
+              "dbf-default-scale" : "0",
+              "initial-load-strategy" : "Start at Beginning",
+              "Fetch Size" : "1000",
+              "qdbtr-normalize" : "false"
+            },
+            "propertyDescriptors" : {
+              "Table Name" : {
+                "displayName" : "Table Name",
+                "identifiesControllerService" : false,
+                "name" : "Table Name",
+                "sensitive" : false
+              },
+              "db-fetch-db-type" : {
+                "displayName" : "Database Type",
+                "identifiesControllerService" : false,
+                "name" : "db-fetch-db-type",
+                "sensitive" : false
+              },
+              "dbf-default-precision" : {
+                "displayName" : "Default Decimal Precision",
+                "identifiesControllerService" : false,
+                "name" : "dbf-default-precision",
+                "sensitive" : false
+              },
+              "Set Auto Commit" : {
+                "displayName" : "Set Auto Commit",
+                "identifiesControllerService" : false,
+                "name" : "Set Auto Commit",
+                "sensitive" : false
+              },
+              "Max Wait Time" : {
+                "displayName" : "Max Wait Time",
+                "identifiesControllerService" : false,
+                "name" : "Max Wait Time",
+                "sensitive" : false
+              },
+              "Database Connection Pooling Service" : {
+                "displayName" : "Database Connection Pooling Service",
+                "identifiesControllerService" : true,
+                "name" : "Database Connection Pooling Service",
+                "sensitive" : false
+              },
+              "Maximum-value Columns" : {
+                "displayName" : "Maximum-value Columns",
+                "identifiesControllerService" : false,
+                "name" : "Maximum-value Columns",
+                "sensitive" : false
+              },
+              "dbf-user-logical-types" : {
+                "displayName" : "Use Avro Logical Types",
+                "identifiesControllerService" : false,
+                "name" : "dbf-user-logical-types",
+                "sensitive" : false
+              },
+              "qdbt-output-batch-size" : {
+                "displayName" : "Output Batch Size",
+                "identifiesControllerService" : false,
+                "name" : "qdbt-output-batch-size",
+                "sensitive" : false
+              },
+              "qdbt-max-rows" : {
+                "displayName" : "Max Rows Per Flow File",
+                "identifiesControllerService" : false,
+                "name" : "qdbt-max-rows",
+                "sensitive" : false
+              },
+              "qdbt-max-frags" : {
+                "displayName" : "Maximum Number of Fragments",
+                "identifiesControllerService" : false,
+                "name" : "qdbt-max-frags",
+                "sensitive" : false
+              },
+              "dbf-default-scale" : {
+                "displayName" : "Default Decimal Scale",
+                "identifiesControllerService" : false,
+                "name" : "dbf-default-scale",
+                "sensitive" : false
+              },
+              "initial-load-strategy" : {
+                "displayName" : "Initial Load Strategy",
+                "identifiesControllerService" : false,
+                "name" : "initial-load-strategy",
+                "sensitive" : false
+              },
+              "Fetch Size" : {
+                "displayName" : "Fetch Size",
+                "identifiesControllerService" : false,
+                "name" : "Fetch Size",
+                "sensitive" : false
+              },
+              "db-fetch-sql-query" : {
+                "displayName" : "Custom Query",
+                "identifiesControllerService" : false,
+                "name" : "db-fetch-sql-query",
+                "sensitive" : false
+              },
+              "qdbtr-normalize" : {
+                "displayName" : "Normalize Table/Column Names",
+                "identifiesControllerService" : false,
+                "name" : "qdbtr-normalize",
+                "sensitive" : false
+              },
+              "Columns to Return" : {
+                "displayName" : "Columns to Return",
+                "identifiesControllerService" : false,
+                "name" : "Columns to Return",
+                "sensitive" : false
+              },
+              "db-fetch-where-clause" : {
+                "displayName" : "Additional WHERE clause",
+                "identifiesControllerService" : false,
+                "name" : "db-fetch-where-clause",
+                "sensitive" : false
+              }
+            },
+            "retriedRelationships" : [ ],
+            "retryCount" : 10,
+            "runDurationMillis" : 0,
+            "scheduledState" : "DISABLED",
+            "schedulingPeriod" : "1 day",
+            "schedulingStrategy" : "TIMER_DRIVEN",
+            "style" : { },
+            "type" : "org.apache.nifi.processors.standard.QueryDatabaseTableRecord",
+            "yieldDuration" : "1 sec"
+          }, {
+            "autoTerminatedRelationships" : [ "success" ],
+            "backoffMechanism" : "PENALIZE_FLOWFILE",
+            "bulletinLevel" : "INFO",
+            "bundle" : {
+              "artifact" : "nifi-standard-nar",
+              "group" : "org.apache.nifi",
+              "version" : "1.28.0"
+            },
+            "comments" : "",
+            "componentType" : "PROCESSOR",
+            "concurrentlySchedulableTaskCount" : 1,
+            "executionNode" : "ALL",
+            "groupIdentifier" : "e0cf3c5f-2d89-3fd9-8015-ee6337952628",
+            "identifier" : "4114ae68-a587-363d-8b1d-5a1872ad53d8",
+            "instanceIdentifier" : "6fbd7005-2cc6-3e3b-5ebb-231a80ea74c8",
+            "maxBackoffPeriod" : "10 mins",
+            "name" : "LogAttribute",
+            "penaltyDuration" : "30 sec",
+            "position" : {
+              "x" : 2688.0,
+              "y" : -104.0
+            },
+            "properties" : {
+              "character-set" : "UTF-8",
+              "Log FlowFile Properties" : "true",
+              "Log Level" : "warn",
+              "attributes-to-log-regex" : ".*",
+              "Output Format" : "Single Line",
+              "Log Payload" : "false"
+            },
+            "propertyDescriptors" : {
+              "Log prefix" : {
+                "displayName" : "Log prefix",
+                "identifiesControllerService" : false,
+                "name" : "Log prefix",
+                "sensitive" : false
+              },
+              "character-set" : {
+                "displayName" : "Character Set",
+                "identifiesControllerService" : false,
+                "name" : "character-set",
+                "sensitive" : false
+              },
+              "Log FlowFile Properties" : {
+                "displayName" : "Log FlowFile Properties",
+                "identifiesControllerService" : false,
+                "name" : "Log FlowFile Properties",
+                "sensitive" : false
+              },
+              "Log Level" : {
+                "displayName" : "Log Level",
+                "identifiesControllerService" : false,
+                "name" : "Log Level",
+                "sensitive" : false
+              },
+              "attributes-to-ignore-regex" : {
+                "displayName" : "Attributes to Ignore by Regular Expression",
+                "identifiesControllerService" : false,
+                "name" : "attributes-to-ignore-regex",
+                "sensitive" : false
+              },
+              "Attributes to Ignore" : {
+                "displayName" : "Attributes to Ignore",
+                "identifiesControllerService" : false,
+                "name" : "Attributes to Ignore",
+                "sensitive" : false
+              },
+              "Attributes to Log" : {
+                "displayName" : "Attributes to Log",
+                "identifiesControllerService" : false,
+                "name" : "Attributes to Log",
+                "sensitive" : false
+              },
+              "attributes-to-log-regex" : {
+                "displayName" : "Attributes to Log by Regular Expression",
+                "identifiesControllerService" : false,
+                "name" : "attributes-to-log-regex",
+                "sensitive" : false
+              },
+              "Output Format" : {
+                "displayName" : "Output Format",
+                "identifiesControllerService" : false,
+                "name" : "Output Format",
+                "sensitive" : false
+              },
+              "Log Payload" : {
+                "displayName" : "Log Payload",
+                "identifiesControllerService" : false,
+                "name" : "Log Payload",
+                "sensitive" : false
+              }
+            },
+            "retriedRelationships" : [ ],
+            "retryCount" : 10,
+            "runDurationMillis" : 25,
+            "scheduledState" : "ENABLED",
+            "schedulingPeriod" : "1 sec",
+            "schedulingStrategy" : "TIMER_DRIVEN",
+            "style" : { },
+            "type" : "org.apache.nifi.processors.standard.LogAttribute",
+            "yieldDuration" : "1 sec"
+          } ],
+          "remoteProcessGroups" : [ ],
+          "variables" : { }
+        } ],
+        "processors" : [ ],
+        "remoteProcessGroups" : [ ],
+        "variables" : { }
+      },
+      "flowEncodingVersion" : "1.0",
+      "parameterContexts" : {
+        "CM_LKP_REPORT_MARKET" : {
+          "componentType" : "PARAMETER_CONTEXT",
+          "inheritedParameterContexts" : [ ],
+          "name" : "CM_LKP_REPORT_MARKET",
+          "parameters" : [ {
+            "description" : "",
+            "name" : "TARGET_TABLE_NAME",
+            "provided" : false,
+            "sensitive" : false,
+            "value" : "CM_LKP_REPORT_MARKET_PROD"
+          }, {
+            "description" : "",
+            "name" : "PIPE_NAME",
+            "provided" : false,
+            "sensitive" : false,
+            "value" : "CM_LKP_REPORT_MARKET_INGESTION_PIPE"
+          }, {
+            "description" : "",
+            "name" : "STAGE_NAME",
+            "provided" : false,
+            "sensitive" : false,
+            "value" : "STG_CM_LKP_REPORT_MARKET"
+          }, {
+            "description" : "",
+            "name" : "SOURCE_TABLE_NAME",
+            "provided" : false,
+            "sensitive" : false,
+            "value" : "CM_LKP_REPORT_MARKET"
+          } ]
+        }
+      },
+      "parameterProviders" : { }
+    }
+  }
+}
